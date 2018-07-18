@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import Products from './browser/components/products'
+import CardDeals from './browser/components/cardDeals'
 
 class App extends Component {
+
+  imageClick() {
+    console.log('click')
+  }
+
   render() {
     return (
       <div>
-        <Products />
+        <CardDeals imageClick={this.imageClick}/>
       </div>
     );
   }
