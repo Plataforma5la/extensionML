@@ -43,7 +43,7 @@ const Items = [{
     precio: 30,
 }]
 
-export default ({imageClick}) => (
+export default () => (
 
     <div className={"card"}>
         <div className={"cardContent"}>

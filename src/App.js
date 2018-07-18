@@ -4,14 +4,10 @@ import CardDeals from './browser/components/cardDeals'
 
 class App extends Component {
 
-  imageClick() {
-    console.log('click')
-  }
-
   render() {
     return (
       <div>
-        <CardDeals imageClick={this.imageClick}/>
+        <CardDeals/>
       </div>
     );
   }
