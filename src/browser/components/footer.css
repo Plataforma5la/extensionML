@@ -1,0 +1,57 @@
+.Footer {
+    border-top: 10px solid #cccccc;
+    background-color: #fff;
+    height: 35%;
+    width: 100%;
+}
+
+.InnerFooter {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    backface-visibility: hidden;
+    
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.255;
+    padding-bottom: 4px;
+}
+
+.secondary-title {
+    border-bottom: 1px solid #e3e3e3;
+    color: #767676;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+.imagenML{
+    float: left;
+}
+.links{
+    
+    text-align: left;
+    color: #767676;
+    font-size: 12px;
+    padding-bottom: 5px;
+    text-decoration:none; 
+}
+
+#img {
+    height: auto; 
+    width: auto; 
+    max-height: 20px;
+    align-self: center;
+    float: left;
+    overflow: hidden;
+    margin-right: 8px
+}
+a:link {text-decoration:none}
+a:visited {text-decoration:none}
+
+#banderas{
+    align-self: center;
+    margin-left: 105px;
+    margin-top: 30px;
+}
