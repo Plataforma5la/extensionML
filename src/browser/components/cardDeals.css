@@ -1,0 +1,104 @@
+.card {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+}
+
+.cardContent {
+    padding: 15px;
+}
+
+.cardHeader {
+    font-size: 17px;
+    line-height: 20px;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 4px;
+    margin: 0;
+    width: 100%;
+}
+
+.cardItemsContainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.itemCardContainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.itemCard {
+    text-align: left;
+    min-height: 60px;
+}
+
+.itemImg {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 35%;
+    padding-right: 10px;
+}
+
+img.itemImg {
+    max-height: 80px;
+    max-width: 80px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.itemDetail {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 63%;
+}
+
+.itemPriceRow {
+    margin-bottom: 2px;
+}
+
+.primaryTitle {
+    width: 100%;
+    margin: 0;
+}
+
+.itemPrecioOld {
+    font-size: 14px;
+    line-height: 18px;
+    color: #767676;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+.itemTitleRow {
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+
+.itemTitle {
+    font-size: 13px;
+    color: #0066c0;
+    text-align: left;
+    line-height: 15px;
+    max-height: 30px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 400;
+    margin: 0;
+}
+
+.itemDescRow {
+    display: flex;
+}
+
+.itemDesc {
+    font-size: 11px;
+    color:#666;
+    font-weight: 300;
+    width: 100%;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
