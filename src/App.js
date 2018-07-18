@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <div>
         <CardDeals/>
-        <Footer />
         <SingleProduct />
+        <Footer />
       </div>
     );
   }
