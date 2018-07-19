@@ -1,3 +1,5 @@
+*:focus { outline: none; } 
+
 .headerTop {
     background-color: rgb(255, 241, 89);
     height: 47px;
@@ -17,26 +19,23 @@
 #lupa {
     width: 20px;
     height: 20px;
+    position: relative;
+    top: 3px;
     
 }
 
-.headerImput {
+.headerInput {
     height: 100%;
     background-color: rgb(255, 241, 89);
     padding: 10px;
 }
 
 #query {
-    text-align: center;
     border-radius: 2px;
     width: calc(100% - 35px);
     border: none;
     height: 25px;
     font-size: 16px;
-}
-
-.formulario {
-    text-align: center
 }
 
 .botonSubmit {
@@ -48,5 +47,6 @@
 
 .formulario {
     background-color: white;
-    border-radius: 2px
+    border-radius: 2px;
+    text-align: center;
 }
