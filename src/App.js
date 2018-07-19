@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CardDeals from './browser/components/cardDeals'
 import Header from './browser/components/HeaderContainer';
+import Footer from './browser/components/Footer'
 
 class App extends Component {
 
@@ -10,6 +11,7 @@ class App extends Component {
       <div>
         <Header />
         <CardDeals/>
+        <Footer />
       </div>
     );
   }
