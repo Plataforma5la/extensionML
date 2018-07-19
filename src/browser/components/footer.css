@@ -1,13 +1,12 @@
 .Footer {
     border-top: 10px solid #cccccc;
     background-color: #fff;
-    height: 35%;
+    height: 350px;
     width: 100%;
 }
 
 .InnerFooter {
     background-color: #fff;
-    padding: 15px;
     text-align: center;
     backface-visibility: hidden;
     
@@ -21,37 +20,39 @@ h3 {
 }
 
 .secondary-title {
+    margin-bottom:  15px;
     border-bottom: 1px solid #e3e3e3;
     color: #767676;
-    font-size: 12px;
-    padding-bottom: 5px;
-}
-.imagenML{
-    float: left;
-}
-.links{
+    font-size: 11px;
+    padding-bottom: 1px;
     
-    text-align: left;
-    color: #767676;
-    font-size: 12px;
-    padding-bottom: 5px;
-    text-decoration:none; 
 }
 
-#img {
-    height: auto; 
-    width: auto; 
-    max-height: 20px;
-    align-self: center;
-    float: left;
-    overflow: hidden;
-    margin-right: 8px
-}
+.links{
+    float: right;
+    text-align: left;
+    color: #518be2;
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    text-decoration:none;
+    line-height: 20px;
+    max-height: 40px;
+   
+   
+} 
+
 a:link {text-decoration:none}
 a:visited {text-decoration:none}
 
-#banderas{
+#carrito{
     align-self: center;
-    margin-left: 105px;
     margin-top: 30px;
+    margin-left: 10%;
+
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
 }
