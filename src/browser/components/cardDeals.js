@@ -57,7 +57,7 @@ export default () => (
                         <div className={"itemDetail"}>
                             <div className={"itemPriceRow"}>
                                 <p className={"primaryTitle"}>
-                                    <span>{"$"+(item.precio).toFixed(2)}</span>
+                                    <span className={"itemPrecio"}>{"$"+(item.precio).toFixed(2)}</span>
                                     {(item.precioAnt)?<span className={"itemPrecioOld"}>{"$"+(item.precioAnt).toFixed(2)}</span>:null}
                                 </p>
                             </div>

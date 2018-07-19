@@ -10,10 +10,14 @@ class App extends Component {
   render() {
     return (
       <div>
+        <div className={"fixedHeader"}>
         <Header />
+        </div>
+        <div>
         <CardDeals/>
         <SingleProduct />
         <Footer />
+        </div>
       </div>
     );
   }

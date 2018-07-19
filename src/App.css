@@ -1,1 +1,10 @@
+.fixedHeader {
+    position: fixed;
+    top: 0;
+    width: 320px;
+}
 
+.cardsContainer {
+    /* overflow-x: hidden; */
+    /* overflow-y: auto; */
+}
