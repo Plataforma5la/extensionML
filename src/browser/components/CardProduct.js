@@ -2,6 +2,7 @@ import React from 'react';
 import './cardProduct.css';
 
 export default function (props) {
+    // const descuento = (1 - parseInt(props.cards.precioNuevo) / parseInt(props.cards.precioAntes)) * 100
 
     return (
         <div>
@@ -23,8 +24,9 @@ export default function (props) {
 
 
                         </p>
+
                         {<p className={"precios"}>
-                            <span className={"precio"}>{card.precioNuevo}</span> <span className={"precioAntes"}>{card.precioAntes}</span> <span className={"descuento"}>{card.descuento}</span>
+                            <span className={"precio"}>${card.precioNuevo}</span> <span className={"precioAntes"}>${card.precioAntes}</span> <span className={"descuento"}>{Math.round((1 - parseInt(card.precioNuevo) / parseInt(card.precioAntes)) * 100)}%OFF</span>
 
                         </p>}
                         <div id={"contenedor"} >

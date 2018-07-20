@@ -19,7 +19,6 @@ export default () => (
  </h3>
             <p className={"secondary-title"}>
                 Visitanos y descrubrí nuestros productos.
-
 </p>
             <div className={"InnerFooter"} id={'carrito'}>
                 <div className={'flex'}>
