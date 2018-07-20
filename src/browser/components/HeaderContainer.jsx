@@ -22,11 +22,17 @@ class HeaderContainer extends React.Component {
     }
 
     handleSubmit(e){
-        window.open("http://listado.mercadolibre.com.ar/" + this.state.value);
-        e.preventDefault()
-        this.setState({
-            value: ''
-        })
+        if(!this.state.value) {
+            window.open("http://mercadolibre.com.ar")
+            e.preventDefault();
+        }
+        else{
+            window.open("http://listado.mercadolibre.com.ar/" + this.state.value);
+            e.preventDefault()
+            this.setState({
+                value: ''
+            })
+        }
     }
 
     render() {
