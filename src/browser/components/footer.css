@@ -5,26 +5,30 @@
     width: 100%;
 }
 
-.InnerFooter {
-    background-color: #fff;
-    text-align: center;
-    backface-visibility: hidden;
-    
-}
 
 h3 {
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 1.255;
-    padding-bottom: 4px;
+    margin-left: 30px;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 1px
 }
 
-.secondary-title {
-    margin-bottom:  15px;
+#border{
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 100%;
     border-bottom: 1px solid #e3e3e3;
+    
+}
+#secondary-title {
+    margin-left: 30px;
+    margin-bottom:  15px;
     color: #767676;
-    font-size: 11px;
+    font-size: 12px;
     padding-bottom: 1px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    
     
 }
 
@@ -47,7 +51,6 @@ a:visited {text-decoration:none}
     align-self: center;
     margin-top: 30px;
     margin-left: 10%;
-
 }
 .flex{
     display: flex;

@@ -1,21 +1,17 @@
 
 .Card {
     border-top: 10px solid #cccccc;
-    background-color: #fff;
+    background-color: #ffffff;
     height: 100%;
     width: 100%;
 }
 
-.CardHeader {
-    line-height: 20px;
-    
-    width: 90%;
-}
 .titulo{
     margin-left: 30px;
     text-align: left;
     color: #767676;
     font-size: 11px;
+    padding: 4px;
 }
 .precios{
     margin-top: 5px;
@@ -44,24 +40,26 @@
     background-color:#fef065;
     height: 20px;
     width: 50%;
+    margin-top: 15px;
 }
 
 
-h3 {
+.nombre {
     margin-left: 30px;
     text-align: left;
     font-size: 20px;
-    margin-bottom: 2px
+    margin-bottom: -10px;
+    padding-bottom: 1px;
 }
 
-.secondary-title {
-    margin-top: 5px;
+.secondary-description {
+   
     margin-left: 30px;
     text-align: left;
-    border-bottom: 1px solid #e3e3e3;
     color: #767676;
     font-size: 14px;
-    padding-bottom: 1px;
+    margin-top: 12px;
+    padding-bottom: 3px;
 }
 #img {
     height: auto; 
@@ -77,13 +75,36 @@ a:visit{text-decoration:none}
 
 #linkText{
 font-size: 14px;
-   color: #fff;
-   margin-left:25px;
-   margin-top:30px;
+color: #fff;
+margin-left: 18px;
+margin-top: 8px;
+display: block;
+height: 100%;
+width: 100%;
+float: left;
+
 }
 #contenedor{
     background-color:#767676;
-    height: 30px;
-    width: 100%;
-    margin-bottom: 10px;
+    height: 35px;
+    width: 90%;
+    margin-bottom: 10px;   
+    flex-direction: row;
+    margin: 0 auto;
+    cursor:pointer;
+    justify-content: space-between
+}
+
+.arrow {
+    max-width: 20px;
+    max-height: 20px;
+    float: right;
+    display:block;
+}
+.flexCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+   
 }

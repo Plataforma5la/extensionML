@@ -8,7 +8,6 @@ var imStyle = {
     maxWidth: '50',
     maxHeight: '50px',
     float: 'left',
-
 };
 
 export default () => (
@@ -17,9 +16,10 @@ export default () => (
         <div className={"InnerFooter"}>
             <h3>Conocé nuestras ofertas!
  </h3>
-            <p className={"secondary-title"}>
+            <h4 id={"secondary-title"} >
                 Visitanos y descrubrí nuestros productos.
-</p>
+                <div id={'border'}></div>
+            </h4>
             <div className={"InnerFooter"} id={'carrito'}>
                 <div className={'flex'}>
 
