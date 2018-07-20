@@ -8,7 +8,7 @@ const Items = [{
     nombre: "Producto 1",
     img: "https://4.imimg.com/data4/BB/RH/MY-15241145/multimedia-mobile-phone-500x500.jpg",
     url: "https://4.imimg.com/data4/BB/RH/MY-15241145/multimedia-mobile-phone-500x500.jpg",
-    descripcion: "descripción de prueba 1",
+    descripcion: "descripción de prueba 1 descripción de prueba 1 descripción de prueba 1 descripción de prueba 1 descripción de prueba 1 descripción de prueba 1 descripción de prueba 1 descripción de prueba 1 descripción de prueba 1 descripción de prueba 1 descripción de prueba 1 descripción de prueba 1 descripción de prueba 1",
     precio: 100,
     precioAnt: 150
 },{
@@ -50,6 +50,15 @@ export default () => (
             <p className={"cardHeader"}>Deals</p>
             <div className={"cardItemsContainer"}>
                 {Items.map(item => {
+                    var length = 100;
+                    var myString = item.descripcion;
+                    var myTruncatedString = () => {
+                        if(item.descripcion.length > 100) {
+                        return myString.substring(0, length)+"..."}
+                        else {
+                        return myString
+                        }
+                    }
                 return(
                     <div key={item.itemNum} className={"itemCardContainer"}>
                         <div className={"itemCard"}>
@@ -58,14 +67,17 @@ export default () => (
                             <div className={"itemPriceRow"}>
                                 <p className={"primaryTitle"}>
                                     <span className={"itemPrecio"}>{"$"+(item.precio).toFixed(2)}</span>
-                                    {(item.precioAnt)?<span className={"itemPrecioOld"}>{"$"+(item.precioAnt).toFixed(2)}</span>:null}
-                                </p>
+                                    </p>
+                                    {(item.precioAnt)
+                                        ?<span><span className={"itemDiscount"}>{(((item.precioAnt-item.precio)/item.precioAnt)*100).toFixed(0)+"% OFF"}</span><span className={"itemPrecioOld itemPrecioOld:hover"}>{"$"+(item.precioAnt).toFixed(2)}</span></span>
+                                        :null
+                                        }
                             </div>
                             <div className={"itemTitleRow"}>
                                 <a target={"_blank"} href={item.url}><h4 className={"itemTitle"}>{item.nombre}</h4></a>
                             </div>
                             <div className={"itemDescRow"}>
-                                <h4 className={"itemDesc"}>{item.descripcion}</h4>
+                                <h4 className={"itemDesc"}>{myTruncatedString()}</h4>
                             </div>
                         </div>
                         </div>
