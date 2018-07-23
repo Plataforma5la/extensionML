@@ -69,11 +69,22 @@ img.itemImg {
 }
 
 .itemPrecioOld {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 18px;
-    color: #767676;
     text-decoration: line-through;
-    margin-left: 8px;
+    margin-left: 5px;
+    transition: all .2s ease-in-out;
+    opacity: 0;
+}
+
+.itemCardContainer:hover .itemPrecioOld {
+    color: #767676;
+    opacity: 1;
+}
+
+.itemDiscount {
+    font-size: 14px;
+    color: #39b54a;
 }
 
 .itemTitleRow {
@@ -103,7 +114,4 @@ img.itemImg {
     font-weight: 300;
     width: 100%;
     margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }

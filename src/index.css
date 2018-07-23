@@ -1,3 +1,7 @@
+* {
+  text-rendering: optimizeLegibility;
+}
+
 html {
   overflow: hidden;
 }
