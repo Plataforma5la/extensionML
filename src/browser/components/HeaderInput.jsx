@@ -2,10 +2,6 @@ import React from 'react';
 import './header.css';
 
 class HeaderInput extends React.Component {
-    constructor(props){
-        super(props);
-        
-    }
     render() {
         return(
         <div className={"headerInput"}>
