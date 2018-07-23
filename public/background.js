@@ -3,3 +3,5 @@ chrome.runtime.onInstalled.addListener(function (object) {
         console.log("New tab launched with http://mercadolibre.com.ar/");
     });
 });
+
+chrome.browserAction.setBadgeText({"text": "2"})
