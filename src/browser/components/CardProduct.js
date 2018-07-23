@@ -19,15 +19,15 @@ export default function (props) {
                             <p className={'titulo'}>OFERTA DEL DIA</p>
                         </div>
                         <div>
-                            <img id={'img'} src={card.imagen} alt='head' />
+                            <img id={'img'} src={card.pictures[0]['url']} alt='head' />
                         </div>
-                        <h3 className={'nombre'}>{card.nombre}
+                        <h3 className={'nombre'}>{card.title}
                         </h3>
                         <p className={"secondary-description"}>
-                            {card.descripcion}
+                            {/* {card.descripcion} */}
                         </p>
                         {<p className={"precios"}>
-                            <span className={"precio"}>${card.precioNuevo}</span> <span className={"precioAntes"}>${card.precioAntes}</span> <span className={"descuento"}>{Math.round((1 - parseInt(card.precioNuevo) / parseInt(card.precioAntes)) * 100)}%OFF</span>
+                            <span className={"precio"}>${card.price}</span> <span className={"precioAntes"}>${card.price}</span> <span className={"descuento"}>{Math.round((1 - parseInt(card.precioNuevo) / parseInt(card.precioAntes)) * 100)}%OFF</span>
 
                         </p>}
 
