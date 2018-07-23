@@ -8,6 +8,7 @@ var imStyle = {
     maxWidth: '50',
     maxHeight: '50px',
     float: 'left',
+    pading: '10px',
 };
 
 export default () => (

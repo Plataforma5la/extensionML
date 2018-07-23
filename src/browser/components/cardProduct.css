@@ -76,35 +76,21 @@ a:visit{text-decoration:none}
 #linkText{
 font-size: 14px;
 color: #fff;
-margin-left: 18px;
-margin-top: 8px;
 display: block;
-height: 100%;
-width: 100%;
+margin-left: 15px;
 float: left;
-
 }
-#contenedor{
+.contenedor{
     background-color:#767676;
     height: 35px;
     width: 90%;
-    margin-bottom: 10px;   
-    flex-direction: row;
+    margin-bottom: 10px;
+    box-sizing: border-box;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor:pointer;
-    justify-content: space-between
+    margin-bottom: 20px;
 }
 
-.arrow {
-    max-width: 20px;
-    max-height: 20px;
-    float: right;
-    display:block;
-}
-.flexCard{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 20px;
-   
-}

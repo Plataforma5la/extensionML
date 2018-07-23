@@ -2,9 +2,10 @@ import React from 'react';
 import './cardProduct.css';
 import arrow from '../imagenes/arrow.png'
 var arrowStyle = {
-    maxWidth: '20px',
-    maxHeight: '20px',
-
+    maxWidth: '17px',
+    maxHeight: '17px',
+    float: 'right',
+    marginLeft: '111px',
 
 };
 export default function (props) {
@@ -29,12 +30,9 @@ export default function (props) {
                             <span className={"precio"}>${card.precioNuevo}</span> <span className={"precioAntes"}>${card.precioAntes}</span> <span className={"descuento"}>{Math.round((1 - parseInt(card.precioNuevo) / parseInt(card.precioAntes)) * 100)}%OFF</span>
 
                         </p>}
-                        <div className={"flexCard"}>
-                            <div id={"contenedor"} className={"flexCard"} >
 
-                                <a href='https://www.mercadolibre.com.ar/' id={'linkText'} target={"_blank"}> Ver en Mercado Libre <img src={arrow} alt='arr' style={arrowStyle} /> </a>
-
-                            </div>
+                        <div className={"contenedor"} >
+                            <a href='https://www.mercadolibre.com.ar/' id={'linkText'} target={"_blank"} > Ver en Mercado Libre  <img src={arrow} alt='arr' style={arrowStyle} /> </a>
                         </div>
                     </div>
                 </div >
