@@ -11,7 +11,7 @@ body {
   padding: 0;
   height: 493px;
   width: 320px;
-  font-family: Arial, sans-serif;
+  font-family: "Proxima Nova", Arial, sans-serif;
   background: #ccc;
   overflow-y: auto;
   overflow-x: hidden;
