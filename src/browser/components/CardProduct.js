@@ -2,8 +2,8 @@ import React from 'react';
 import './cardProduct.css';
 import arrow from '../imagenes/arrow.png'
 var arrowStyle = {
-    maxWidth: '17px',
-    maxHeight: '17px',
+    maxWidth: '16px',
+    maxHeight: '16px',
     float: 'right',
     marginLeft: '111px',
 
@@ -32,7 +32,7 @@ export default function (props) {
                         </p>}
 
                         <div className={"contenedor"} >
-                            <a href={card.permalink} id={'linkText'} target={"_blank"} > Ver en Mercado Libre  <img src={arrow} alt='arr' style={arrowStyle} /> </a>
+                            <a href={card.permalink} id={'linkText'} target={"_blank"} > Ver en Mercado Libre   </a>
                         </div>
                     </div>
                 </div >
@@ -40,3 +40,5 @@ export default function (props) {
         </div >
     )
 }
+
+//<img src={arrow} alt='arr' style={arrowStyle} />
