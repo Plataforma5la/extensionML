@@ -10,7 +10,7 @@ export default props => {
     return (
     <div className={"card"}>
         <div className={"cardContent"}>
-            <p className={"cardHeader"}>Deals</p>
+            <p className={"cardHeader"}>Ofertas de la semana</p>
             <div className={"cardItemsContainer"}>
                 {products.map(item => {
                     var length = 100;

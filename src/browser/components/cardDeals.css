@@ -3,6 +3,10 @@
     height: 100%;
     width: 100%;
     margin-top: 10px;
+    border: none;
+    box-shadow: 0 1px 6px rgb(0, 0, 0, .3);
+    border-radius: 1px;
+    position: relative;
 }
 
 .cardContent {
@@ -11,6 +15,7 @@
 
 .cardHeader {
     font-size: 17px;
+    font-weight: 600;
     line-height: 20px;
     border-bottom: 1px solid #e3e3e3;
     padding-bottom: 4px;
