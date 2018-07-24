@@ -12,7 +12,6 @@ export default function (props) {
 
     return (
         <div>
-            {console.log('props', props)}
             {props.cards.map(card => (
                 <div className={"Card"} key={card.id} >
                     <div>
@@ -27,13 +26,13 @@ export default function (props) {
                         {<p className={"precios"}>
                             <span className={"precio"}>${card.price}</span>
                             {(card.original_price)
-                            ?<span><span className={"precioAntes"}>{card.original_price}</span><span className={"descuento"}>{Math.round((1 - parseInt(card.price) / parseInt(card.original_price)) * 100)}%OFF</span></span>
+                            ?<span><span className={"precioAntes"}>${card.original_price}</span><span className={"descuento"}>{Math.round((1 - parseInt(card.price) / parseInt(card.original_price)) * 100)}%OFF</span></span>
                             :null}
 
                         </p>}
 
                         <div className={"contenedor"} >
-                            <a href='https://www.mercadolibre.com.ar/' id={'linkText'} target={"_blank"} > Ver en Mercado Libre  <img src={arrow} alt='arr' style={arrowStyle} /> </a>
+                            <a href={card.permalink} id={'linkText'} target={"_blank"} > Ver en Mercado Libre  <img src={arrow} alt='arr' style={arrowStyle} /> </a>
                         </div>
                     </div>
                 </div >

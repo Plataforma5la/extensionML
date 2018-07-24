@@ -13,7 +13,7 @@ class CardDealsContainer extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://api.mercadolibre.com/sites/MLA/search?category=MLA1430&limit=5&price=100-1000')
+        axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1430&limit=5&price=100-1000`)
             .then(data => this.setState({products: data.data.results}))
     }
 
