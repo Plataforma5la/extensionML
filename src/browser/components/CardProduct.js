@@ -26,8 +26,8 @@ export default function (props) {
                         {<p className={"precios"}>
                             <span className={"precio"}>${card.price}</span>
                             {(card.original_price)
-                            ?<span><span className={"precioAntes"}>${card.original_price}</span><span className={"descuento"}>{Math.round((1 - parseInt(card.price) / parseInt(card.original_price)) * 100)}%OFF</span></span>
-                            :null}
+                                ? <span><span className={"precioAntes"}>${card.original_price}</span><span className={"descuento"}>{Math.round((1 - parseInt(card.price) / parseInt(card.original_price)) * 100)}%OFF</span></span>
+                                : null}
 
                         </p>}
 

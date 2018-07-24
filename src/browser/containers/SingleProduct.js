@@ -40,7 +40,7 @@ export default class SingleProduct extends React.Component {
     }
     componentDidMount() {
 
-        axios.get('https://api.mercadolibre.com/sites/MLA/search?category=MLA1051&limit=3')
+        axios.get('https://api.mercadolibre.com/sites/MLM/search?category=MLM1051&limit=3')
             .then(result => {
 
 
