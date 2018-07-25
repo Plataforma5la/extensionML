@@ -29,7 +29,7 @@ export default props => {
                         <div className={"itemDetail"}>
                             <div className={"itemPriceRow"}>
                                 <p className={"primaryTitle"}>
-                                    <span className={"itemPrecio"}>{"$"+item.price}</span>
+                                    <span className={"itemPrecio"}>{"$"+item.price}</span><span className={"bookmarkIcon"}></span> 
                                     </p>
                                     {(item.original_price)
                                         ?<span><span className={"itemDiscount"}>{(Math.floor(((item.original_price-item.price)/item.original_price)*100)).toFixed(0)+"% OFF"}</span><span className={"itemPrecioOld itemPrecioOld:hover"}>{"$"+item.original_price}</span></span>

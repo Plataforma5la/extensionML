@@ -23,6 +23,16 @@
     width: 100%;
 }
 
+.bookmarkIcon {
+    color: #3483fa;
+    cursor: pointer;
+}
+
+.itemCardContainer:hover .bookmarkIcon:before{
+    font-family: navigation;
+    content: '\EA2C';
+}
+
 .cardItemsContainer {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -67,6 +77,8 @@ img.itemImg {
 .primaryTitle {
     width: 100%;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .itemPrecio {
