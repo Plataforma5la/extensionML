@@ -10,7 +10,7 @@ export default props => {
     return (
     <div className={"card"}>
         <div className={"cardContent"}>
-            <p className={"cardHeader"}>Deals</p>
+            <p className={"cardHeader"}>Ofertas de la semana</p>
             <div className={"cardItemsContainer"}>
                 {products.map(item => {
                     var length = 100;
@@ -29,7 +29,7 @@ export default props => {
                         <div className={"itemDetail"}>
                             <div className={"itemPriceRow"}>
                                 <p className={"primaryTitle"}>
-                                    <span className={"itemPrecio"}>{"$"+item.price}</span>
+                                    <span className={"itemPrecio"}>{"$"+item.price}</span><span className={"bookmarkIcon"}></span> 
                                     </p>
                                     {(item.original_price)
                                         ?<span><span className={"itemDiscount"}>{(Math.floor(((item.original_price-item.price)/item.original_price)*100)).toFixed(0)+"% OFF"}</span><span className={"itemPrecioOld itemPrecioOld:hover"}>{"$"+item.original_price}</span></span>
