@@ -9,22 +9,22 @@ class CardDealsContainer extends React.Component {
         super(props);
         this.state = {
             products: [],
-            bookmark: false
+            bookmark: {}
         }
     
         this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount() {
-        axios.get(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1430&limit=5&price=100-1000`)
+        axios.get(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1430&limit=5&price=549-650`)
             .then(data => this.setState({products: data.data.results}))
     }
 
-    handleClick() {
-        this.setState(prevState => ({
-            bookmark: !prevState.bookmark
+    handleClick = id => 
+     this.setState(({bookmark}) => ({
+            bookmark: {...bookmark, [id]: !bookmark[id]}
         }))
-    }
+    
 
     render() {
      return <CardDeals handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products}/>
