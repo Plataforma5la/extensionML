@@ -8,8 +8,11 @@ class CardDealsContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: []
+            products: [],
+            bookmark: false
         }
+    
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount() {
@@ -17,8 +20,14 @@ class CardDealsContainer extends React.Component {
             .then(data => this.setState({products: data.data.results}))
     }
 
+    handleClick() {
+        this.setState(prevState => ({
+            bookmark: !prevState.bookmark
+        }))
+    }
+
     render() {
-     return <CardDeals products={this.state.products}/>
+     return <CardDeals handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products}/>
     }
 
 }
