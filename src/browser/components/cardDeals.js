@@ -6,7 +6,6 @@ import './cardDeals.css';
 export default props => {
 
     const { products, bookmark, handleClick } = props
-    console.log('card deals', bookmark)
 
     return (
         <div className={"card"}>
