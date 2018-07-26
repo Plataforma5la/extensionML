@@ -4,13 +4,6 @@ import carrito from '../imagenes/carrito.png'
 import bag from '../imagenes/bag.png'
 import tag from '../imagenes/tag.png'
 
-var imStyle = {
-    maxWidth: '50',
-    maxHeight: '50px',
-    float: 'left',
-    pading: '10px',
-};
-
 export default () => (
 
     <div className={"Footer"}>
@@ -23,23 +16,21 @@ export default () => (
             </h4>
             <div className={"InnerFooter"} id={'carrito'}>
                 <div className={'flex'}>
-
-                    <img style={imStyle} src={carrito} alt='car' />
-
-                    <a href={'https://www.mercadolibre.com/jms/mla/lgz/msl/login/H4sIAAAAAAAEAzWNQQ7CMAwE_-Jz1d5z5COVSbfBIiGRY1RQxd9xkLjZ3tnxSbkmeaz2bqBAeLUsUYwmapltr1pW2Two2U9dDP-VB8LKBQbtFM4hStgu8NJQmT7hTKo-38xaD8tyHMdcoJG3muWqmGMtM-vinCJJdxXGt1_3M9HO3VZTjncKO-eOzxckonKEsAAAAA/user'} target={'_blank'}  >
-
-                        <p className={"links"}> Agregar al carrito</p>
+                    <a href={'https://www.mercadolibre.com/jms/mlm/lgz/msl/login/H4sIAAAAAAAEAzWMOw7DMAxD76I5n91jLxKoNpMatWJDUoEUQe9eZ8hI8vGdVOqW98W_DRQIRys5ZqeBWmFfq8qSUx-k9Mqy445yIawscKhROC_RhvRAP12qlYuhQ1vt4eXeLMxzXaHONgk0cqolPxVTrDLJcW9jwlh4NAjvTL-hi8wXV45vCq4f_P57Q0aktAAAAA/user'} target={'_blank'} >
+                        <i className={'carritoIcon'}
+                        />
+                        <p className={"links"}> Ver el carrito</p>
                     </a>
                 </div>
                 <div className={'flex'}>
-                    <img style={imStyle} src={bag} alt='bg' />
-                    <a href={'https://www.mercadolibre.com/jms/mla/lgz/msl/login/H4sIAAAAAAAEAzWNQQ7CMAwE_-Jz1d5z5COVSbfBIiGRY1RQxd9xkLjZ3tnxSbkmeaz2bqBAeLUsUYwmapltr1pW2Two2U9dDP-VB8LKBQbtFM4hStgu8NJQmT7hTKo-38xaD8tyHMdcoJG3muWqmGMtM-vinCJJdxXGt1_3M9HO3VZTjncKO-eOzxckonKEsAAAAA/user'} target={'_blank'} >
-                        <p className={"links"}> Mis órdenes</p>
+                    <a href={'https://www.mercadolibre.com.mx/mercadopuntos/descuentosexclusivos'} target={'_blank'}>
+                        <i className={'descuentosMP'} />
+                        <p className={"links"}> Descuentos Mercado Puntos</p>
                     </a>
                 </div>
                 <div className={'flex'}>
-                    <img style={imStyle} src={tag} alt='tag' />
-                    <a href={'https://www.mercadolibre.com.ar/'} target={'_blank'}>
+                    <a href={'https://ofertas.mercadolibre.com.mx/ofertas-de-la-semana'} target={'_blank'}>
+                        <i className={'ofertasSemana'} />
                         <p className={"links"}> Más ofertas</p>
                     </a>
                 </div>
