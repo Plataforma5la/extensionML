@@ -99,7 +99,39 @@ margin-left:8px;
     border-radius: 8px;
     padding-left: 20px
 }
+.ui-item_bookmark {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: hsla(0,0%,100%,.7);
+    padding: 0;
+    float: right;
+     /* display: none;  */
 
+}
+
+.ui-item_bookmark:hover .ui-item_bookmark_icon {
+    fill: #1259c3
+}
+
+.ui-item_bookmark_icon {
+    fill: #3483fa;
+    width: 18px;
+    left: 9px;
+}
+
+.ui-item_bookmark_added {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: hsla(0,0%,100%,.7);
+    padding: 0;
+    display: block;
+}
+
+.itemCardContainer:hover .ui-item_bookmark {
+    display: block;
+}
 /* .button{
     background-color:#3a86f7;
     height: 40px;

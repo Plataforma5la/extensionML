@@ -23,14 +23,36 @@
     width: 100%;
 }
 
-.bookmarkIcon {
-    color: #3483fa;
+.ui-item_bookmark {
+    outline: none;
+    border: none;
     cursor: pointer;
+    background-color: hsla(0,0%,100%,.7);
+    padding: 0;
+    display: none;
 }
 
-.itemCardContainer:hover .bookmarkIcon:before{
-    font-family: navigation;
-    content: '\EA2C';
+.ui-item_bookmark:hover .ui-item_bookmark_icon {
+    fill: #1259c3
+}
+
+.ui-item_bookmark_icon {
+    fill: #3483fa;
+    width: 18px;
+    left: 9px;
+}
+
+.ui-item_bookmark_added {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: hsla(0,0%,100%,.7);
+    padding: 0;
+    display: block;
+}
+
+.itemCardContainer:hover .ui-item_bookmark {
+    display: block;
 }
 
 .cardItemsContainer {
@@ -111,7 +133,7 @@ img.itemImg {
 
 .itemTitle {
     font-size: 13px;
-    color: #0066c0;
+    color: #666;
     text-align: left;
     line-height: 15px;
     max-height: 30px;
