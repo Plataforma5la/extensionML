@@ -17,20 +17,20 @@ export default () => (
             <div className={"InnerFooter"} id={'carrito'}>
                 <div className={'flex'}>
                     <a href={'https://www.mercadolibre.com/jms/mlm/lgz/msl/login/H4sIAAAAAAAEAzWMOw7DMAxD76I5n91jLxKoNpMatWJDUoEUQe9eZ8hI8vGdVOqW98W_DRQIRys5ZqeBWmFfq8qSUx-k9Mqy445yIawscKhROC_RhvRAP12qlYuhQ1vt4eXeLMxzXaHONgk0cqolPxVTrDLJcW9jwlh4NAjvTL-hi8wXV45vCq4f_P57Q0aktAAAAA/user'} target={'_blank'} >
-                        <i className={'carritoIcon'}
+                        <span className={'carritoIcon'}
                         />
-                        <p className={"links"}> Ver el carrito</p>
+                        <p className={"linkCarrito"}> Ver el carrito</p>
                     </a>
                 </div>
                 <div className={'flex'}>
                     <a href={'https://www.mercadolibre.com.mx/mercadopuntos/descuentosexclusivos'} target={'_blank'}>
-                        <i className={'descuentosMP'} />
+                        <span className={'descuentosMP'} />
                         <p className={"links"}> Descuentos Mercado Puntos</p>
                     </a>
                 </div>
                 <div className={'flex'}>
                     <a href={'https://ofertas.mercadolibre.com.mx/ofertas-de-la-semana'} target={'_blank'}>
-                        <i className={'ofertasSemana'} />
+                        <span className={'ofertasSemana'} />
                         <p className={"links"}> Más ofertas</p>
                     </a>
                 </div>
