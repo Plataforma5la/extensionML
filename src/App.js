@@ -22,7 +22,6 @@ class App extends Component {
     return (
       <div>
         <div className={"fixedHeader"}>
-          {console.log(this.state)}
           <Header handleValor={this.handleValor} valor={this.state.valor} />
         </div>
         {this.state.valor === 'home' ? <div className={"cardsContainer"}>
