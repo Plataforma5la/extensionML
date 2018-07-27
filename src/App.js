@@ -6,7 +6,6 @@ import Footer from './browser/components/Footer'
 import SingleProduct from './browser/containers/SingleProduct'
 
 class App extends Component {
-
   render() {
     return (
         <div>
