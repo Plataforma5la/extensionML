@@ -137,15 +137,7 @@ margin-left:8px;
 .Card:hover .ui-item_bookmark2 {
     display: block;
 }
-.cruz:before {
-    font-family: "navigation";
-    content: '\EA08';
-    color: grey;
-    font-size: 20px;
-    font-variant: normal;
-    float: right;
-    
-}
+
 
 /* .button{
     background-color:#3a86f7;
