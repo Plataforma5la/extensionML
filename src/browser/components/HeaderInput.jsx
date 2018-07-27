@@ -3,15 +3,16 @@ import './header.css';
 
 class HeaderInput extends React.Component {
     render() {
-        return(
-        <div className={"headerInput"}>
-            <form onSubmit={this.props.handleSubmit}>
-                <div className={"formulario"}>
-                    <input size="15" type="text" id="query" placeholder="Buscar productos, marcas y más..."  value={this.props.value} onChange={this.props.handleChange} autoComplete="off" />
-                    <button className={"botonSubmit"} type="submit"><img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-128.png" id="lupa" alt="lupa" /></button>
-                </div>
-            </form>
-        </div>
+        return (
+            <div className={"headerInput"}>
+                <form onSubmit={this.props.handleSubmit}>
+                    <div className={"formulario"}>
+                        <input size="15" type="text" id="query" placeholder="Buscar productos, marcas y más..." value={this.props.value} onChange={this.props.handleChange} autoComplete="off" />
+                        <button className={"botonSubmit"} type="submit"><img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-128.png" id="lupa" alt="lupa" /></button>
+                    </div>
+                </form>
+
+            </div>
         )
     }
 }

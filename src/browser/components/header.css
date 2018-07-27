@@ -11,17 +11,17 @@
 }
 
 #logoMeli {
-    width: 120px;
-    height: 60px;
-    
+    height: 30px;
+    margin-top: 15px;
 }
 
 #lupa {
     width: 20px;
     height: 20px;
     position: relative;
-    top: 3px;
+    top: 2px;
     cursor: pointer;
+    font-family: 'navigation';
     
 }
 
@@ -32,14 +32,19 @@
     margin-bottom: 10px;
 }
 
+.headerList {
+    height: 100%;
+}
+
 #query {
     border-radius: 2px;
     width: calc(100% - 35px);
     border: none;
     height: 25px;
-    font-size: 16px;
     margin-left: 7px;
     font-size: 14px;
+    font-family: "Proxima Nova", Arial, sans-serif;
+
 }
 
 .botonSubmit {
@@ -55,3 +60,27 @@
     text-align: center;
     display: flex;
 }
+
+
+
+.botones {
+    background-color: rgb(255, 241, 89);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.seleccionado {
+    border-bottom:3px solid #3a86f7;
+}
+
+.lista-botones {
+    list-style: none;
+    display: flex;
+    background-color: rgb(255, 241, 89);
+    margin-top: -20px;
+}
+.botones-hl {
+    text-align: center;
+}
+
