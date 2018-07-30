@@ -68,6 +68,8 @@
     border: none;
     cursor: pointer;
     padding: 10px;
+    font-family: "Proxima Nova";
+    margin-left: 20px;
 }
 
 .seleccionado {
@@ -84,3 +86,6 @@
     text-align: center;
 }
 
+.li-boton {
+    margin-left: 25px;
+}

@@ -48,7 +48,6 @@ router.post('/bookmarks/:id/:token', (req, res) => {
 })
 
 router.delete('/bookmarks/:id/:token', (req, res) => {
-    console.log('llega hasta acá')
     axios.delete(`https://api.mercadolibre.com/users/me/bookmarks/${req.params.id}?access_token=${req.params.token}`)
     .then(data => res.json(data.data))
 })

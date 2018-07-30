@@ -6,6 +6,7 @@ import Footer from './browser/components/Footer'
 import SingleProduct from './browser/containers/SingleProduct'
 import FavContainer from './browser/containers/FavContainer';
 import axios from 'axios';
+import { ClipLoader } from 'react-spinners'
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class App extends Component {
       bookmark: {},
       token: '',
       products: [],
+
     }
     this.handleValor = this.handleValor.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -96,11 +98,11 @@ class App extends Component {
         <div className={"fixedHeader"}>
           <Header handleValor={this.handleValor} valor={this.state.valor} />
         </div>
-        {this.state.valor === 'home' ? <div className={"cardsContainer"}>
-          <CardDealsContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} valor={this.state.valor} handleValor={this.handleValor} />
+        {this.state.products.length === 0 ? <div className="preCargar"><ClipLoader color={"#fff159"} loading={true} /></div> : <div>{this.state.valor === 'home' ? <div className={"cardsContainer"}>
+          <CardDealsContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} />
           <SingleProduct />
-        </div> : <FavContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} valor={this.state.valor} handleValor={this.handleValor} />}
-        <Footer />
+        </div> : <FavContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} valor={this.state.valor} handleValor={this.handleValor} />}<Footer /></div>}
+
 
       </div>
     );
