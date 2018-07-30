@@ -3,6 +3,10 @@
     height: 100%;
     width: 100%;
     margin-top: 10px;
+    border: none;
+    box-shadow: 0 1px 6px rgb(0, 0, 0, .3);
+    border-radius: 1px;
+    position: relative;
 }
 
 .cardContent {
@@ -11,11 +15,44 @@
 
 .cardHeader {
     font-size: 17px;
+    font-weight: 600;
     line-height: 20px;
     border-bottom: 1px solid #e3e3e3;
     padding-bottom: 4px;
     margin: 0;
     width: 100%;
+}
+
+.ui-item_bookmark {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: hsla(0,0%,100%,.7);
+    padding: 0;
+    display: none;
+}
+
+.ui-item_bookmark:hover .ui-item_bookmark_icon {
+    fill: #1259c3
+}
+
+.ui-item_bookmark_icon {
+    fill: #3483fa;
+    width: 18px;
+    left: 9px;
+}
+
+.ui-item_bookmark_added {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: hsla(0,0%,100%,.7);
+    padding: 0;
+    display: block;
+}
+
+.itemCardContainer:hover .ui-item_bookmark {
+    display: block;
 }
 
 .cardItemsContainer {
@@ -62,6 +99,8 @@ img.itemImg {
 .primaryTitle {
     width: 100%;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .itemPrecio {
@@ -94,7 +133,7 @@ img.itemImg {
 
 .itemTitle {
     font-size: 13px;
-    color: #0066c0;
+    color: #666;
     text-align: left;
     line-height: 15px;
     max-height: 30px;
@@ -103,7 +142,7 @@ img.itemImg {
     font-weight: 400;
     margin: 0;
 }
-
+/* 
 .itemDescRow {
     display: flex;
 }
@@ -114,4 +153,4 @@ img.itemImg {
     font-weight: 300;
     width: 100%;
     margin: 0;
-}
+} */

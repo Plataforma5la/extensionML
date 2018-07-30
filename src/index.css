@@ -7,11 +7,11 @@ html {
 }
 
 body {
-  margin: 97px 0 0 0;
+  margin: 122px 0 0 0;
   padding: 0;
   height: 493px;
   width: 320px;
-  font-family: Arial, sans-serif;
+  font-family: "Proxima Nova", Arial, sans-serif;
   background: #ccc;
   overflow-y: auto;
   overflow-x: hidden;
@@ -19,7 +19,7 @@ body {
 
 body::-webkit-scrollbar {
   width: 8px;
-  background-color: #F5F5F5;
+  background-color: #ccc;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -29,5 +29,5 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #ccc;
 }
