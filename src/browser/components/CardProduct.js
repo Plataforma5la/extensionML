@@ -1,15 +1,8 @@
 import React from 'react';
 import './cardProduct.css';
-import arrow from '../imagenes/arrow.png'
-var arrowStyle = {
-    maxWidth: '16px',
-    maxHeight: '16px',
-    float: 'right',
-    marginLeft: '111px',
 
-};
 export default function (props) {
-    const { cards, bookmark, handleClick, handleClickCruz } = props
+    const { cards, bookmark, handleClick } = props
 
     return (
         <div>

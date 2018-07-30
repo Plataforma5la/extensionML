@@ -1,8 +1,5 @@
 import React from 'react';
 import './footer.css';
-import carrito from '../imagenes/carrito.png'
-import bag from '../imagenes/bag.png'
-import tag from '../imagenes/tag.png'
 
 export default () => (
 
