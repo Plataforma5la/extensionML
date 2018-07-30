@@ -20,30 +20,17 @@ class App extends Component {
   }
   render() {
     return (
-<<<<<<< HEAD
-        <div>
-          <div className={"fixedHeader"}>
-           <Header />
-          </div>
-          <div className={"cardsContainer"}>
-           <CardDealsContainer/>
-           <SingleProduct />
-           <Footer />
-          </div>
-        </div>          
-=======
       <div>
         <div className={"fixedHeader"}>
           {console.log(this.state)}
           <Header handleValor={this.handleValor} valor={this.state.valor} />
         </div>
         {this.state.valor === 'home' ? <div className={"cardsContainer"}>
-          <CardDeals />
+          <CardDealsContainer />
           <SingleProduct />
         </div> : null}
         <Footer />
       </div>
->>>>>>> origin/2-header
     );
   }
 }
