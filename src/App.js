@@ -27,11 +27,11 @@ class App extends Component {
         token: window.location.href.split('token=')[1]
       })
     }
-    axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1430&limit=5&price=549-650`)
+    axios.get('/back/products')
       .then(data => this.setState({ products: data.data.results }))
       .then(() => {
         if (this.state.token) {
-          axios.get(`https://api.mercadolibre.com/users/me/bookmarks?access_token=${this.state.token}`)
+          axios.get(`/back/products/${this.state.token}`)
             .then(data => {
               var arr = data.data
               var obj = {}
@@ -61,21 +61,22 @@ class App extends Component {
     if (!this.state.token) {
       window.location.href = 'https://auth.mercadolibre.com.ar/authorization?response_type=token&client_id=6429131972786101'
     } else if (this.state.bookmark[id]) {
-      console.log('hace este else if', `https://api.mercadolibre.com/users/me/bookmarks/${id}?access_token=${this.state.token}`)
       axios({
         method: 'DELETE',
-        // headers: {"Content-Type": "application/x-www-form-urlencoded"},
-        url: `https://api.mercadolibre.com/users/me/bookmarks/${id}?access_token=${this.state.token}`,
+        url: `/back/bookmarks/${id}/${this.state.token}`,
       })
+        .then(() => {
+          var bookmark = { ...this.state.bookmark }
+          delete bookmark[id]
+          this.setState({ bookmark })
+        })
         .catch(err => {
           console.log('MESSAGE', err)
         })
     } else {
       axios({
         method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        url: `https://api.mercadolibre.com/users/me/bookmarks?access_token=${this.state.token}`,
-        data: JSON.stringify({ "item_id": id })
+        url: `/back/bookmarks/${id}/${this.state.token}`,
       })
         .then(data => {
           var bookmark = { ...this.state.bookmark }
