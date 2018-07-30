@@ -99,9 +99,9 @@ class App extends Component {
         {this.state.products.length === 0?<div className="preCargar"><ClipLoader color={"#fff159"} loading={ true }/></div>:<div>{this.state.valor === 'home' ? <div className={"cardsContainer"}>
           <CardDealsContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} />
           <SingleProduct />
-        </div> : null}</div> }
+        </div> : null}<Footer /></div> }
+          
         
-        <Footer />
       </div>
     );
   }
