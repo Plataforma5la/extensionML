@@ -78,13 +78,6 @@ class App extends Component {
             method: 'POST',
             url: `/back/bookmarks/${id}/${this.state.token}`,
         })
-    } else {
-      axios({
-        method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        url: `https://api.mercadolibre.com/users/me/bookmarks?access_token=${this.state.token}`,
-        data: JSON.stringify({ "item_id": id })
-      })
         .then(data => {
           var bookmark = { ...this.state.bookmark }
           bookmark[data.data.item_id] = data.data.bookmarked_date;
