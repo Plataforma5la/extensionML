@@ -11,11 +11,13 @@ export default class SingleProduct extends React.Component {
             bookmark: {}
         }
         this.handleClick = this.handleClick.bind(this)
+
     }
     handleClick = id =>
         this.setState(({ bookmark }) => ({
             bookmark: { ...bookmark, [id]: !bookmark[id] }
         }))
+
     componentDidMount() {
 
         axios.get('https://api.mercadolibre.com/sites/MLM/search?category=MLM1051&limit=3')
@@ -41,7 +43,9 @@ export default class SingleProduct extends React.Component {
 
         return (
             <div>
-                <CardProduct handleClick={this.handleClick} bookmark={this.state.bookmark} cards={this.state.cards} />
+                <CardProduct handleClick={this.handleClick} bookmark={this.state.bookmark} cards={this.state.cards}
+
+                />
             </div>
         )
     }

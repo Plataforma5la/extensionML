@@ -9,12 +9,14 @@ var arrowStyle = {
 
 };
 export default function (props) {
-    const { cards, bookmark, handleClick } = props
+    const { cards, bookmark, handleClick, handleClickCruz } = props
+
     return (
         <div>
             {cards.map(card => (
 
                 <div className={"Card"} key={card.id} >
+
                     <div>
 
                         <div className={'oferta'}>
@@ -49,4 +51,3 @@ export default function (props) {
     )
 }
 
-//<img src={arrow} alt='arr' style={arrowStyle} />
