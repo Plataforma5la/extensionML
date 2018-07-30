@@ -6,12 +6,12 @@ class HeaderList extends React.Component {
         return (
             <div className={"headerList"}>
                 <ul className={"lista-botones"}>
-                    <li>
+                    <li className={"li-boton"}>
                         <button className={this.props.condition === 'home' ? 'botones seleccionado' : 'botones'} onClick={() => this.props.handleClick("home")}>Home
                         </button>
                     </li>
                     <li>
-                        <button className={this.props.condition === 'carrito' ? 'botones seleccionado' : 'botones'} onClick={() => this.props.handleClick("carrito")}>Agregar al carrito</button>
+                        <button className={this.props.condition === 'carrito' ? 'botones seleccionado' : 'botones'} onClick={() => this.props.handleClick("carrito")}>Favoritos</button>
                     </li>
                 </ul>
             </div>
