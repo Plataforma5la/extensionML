@@ -23,18 +23,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-
     if (window.location.href.includes('#access_token')) {
       this.setState({
         token: window.location.href.split('token=')[1]
       })
     }
+    console.log("hola???", this.state.token)
     axios.get('/back/products')
       .then(data => this.setState({ products: data.data.results }))
       .then(() => {
+        console.log(this.state.token)
         if (this.state.token) {
+          console.log('s')
           axios.get(`/back/products/${this.state.token}`)
             .then(data => {
+              console.log(data);
               var arr = data.data
               var obj = {}
               for (var i = 0; i < arr.length; i++) {
@@ -46,7 +49,7 @@ class App extends Component {
               this.setState({
                 bookmark: obj
               })
-            ))
+            )).catch(err => console.log(err));
         }
       }
       )
@@ -92,7 +95,7 @@ class App extends Component {
   }
 
   render() {
-
+    console.log('que trae', this.state.bookmark)
     return (
       <div>
         <div className={"fixedHeader"}>
