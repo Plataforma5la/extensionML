@@ -4,7 +4,7 @@ import CardDealsContainer from './browser/containers/CardDealsContainer'
 import Header from './browser/containers/HeaderContainer';
 import Footer from './browser/components/Footer'
 import SingleProduct from './browser/containers/SingleProduct'
-import axios from 'axios';
+import Axios from './axiosdef';
 import { ClipLoader } from 'react-spinners'
 
 class App extends Component {
@@ -28,11 +28,11 @@ class App extends Component {
         token: window.location.href.split('token=')[1]
       })
     }
-    axios.get('/back/products')
+    Axios.get('/back/products')
         .then(data => this.setState({products: data.data.results}))
         .then(() => {
             if(this.state.token){
-            axios.get(`/back/products/${this.state.token}`)
+            Axios.get(`/back/products/${this.state.token}`)
                 .then(data => {
                     var arr = data.data
                     var obj = {}
@@ -61,7 +61,7 @@ class App extends Component {
     if(!this.state.token) {
         window.location.href = 'https://auth.mercadolibre.com.ar/authorization?response_type=token&client_id=6429131972786101'
     } else if(this.state.bookmark[id]) {
-        axios({
+        Axios({
           method: 'DELETE',
           url: `/back/bookmarks/${id}/${this.state.token}`,
         })
@@ -74,7 +74,7 @@ class App extends Component {
           console.log('MESSAGE', err)
       })
     } else {
-        axios({
+        Axios({
             method: 'POST',
             url: `/back/bookmarks/${id}/${this.state.token}`,
         })
