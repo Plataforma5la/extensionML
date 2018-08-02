@@ -65,10 +65,13 @@ class App extends Component {
       }
 
   bookmarkState(id) {
+
+    var tokenClickFav = localStorage.getItem('access-token')
+
     if (this.state.bookmark[id]) {
       Axios({
         method: 'DELETE',
-        url: `/back/bookmarks/${id}/${this.state.token}`,
+        url: `/back/bookmarks/${id}/${tokenClickFav}`,
       })
         .then(() => {
 

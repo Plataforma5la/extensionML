@@ -56,7 +56,7 @@ export default props => {
                                                         </button>
                                                     }</span>}
                                                     </span>}
-                                                }
+                                                
                                             </span>
                                             {(item.original_price)
                                                 ? <span><span className={"itemDiscount"}>{(Math.floor(((item.original_price - item.price) / item.original_price) * 100)).toFixed(0) + "% OFF"}</span><span className={"itemPrecioOld itemPrecioOld:hover"}>{"$" + item.original_price}</span></span>

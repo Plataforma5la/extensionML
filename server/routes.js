@@ -73,6 +73,11 @@ router.get('/singleproducts', (req, res) => {
         .then(data => res.json(data.data))
 })
 
+router.get('/product/:id', (req, res) => {
+    axios.get(`https://api.mercadolibre.com/items/${req.params.id}`)
+        .then(data => res.json(data.data))
+})
+
 router.get('/products/:token', (req, res) => {
     axios.get(`https://api.mercadolibre.com/users/me/bookmarks?access_token=${req.params.token}`)
     .then(data => res.json(data.data))
