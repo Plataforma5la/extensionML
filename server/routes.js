@@ -8,7 +8,7 @@ const allowCrossDomain = (req, res, next) => {
     // intercept OPTIONS method
     if ('OPTIONS' == req.method) {
         res.set({
-            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true,
             'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
             "Access-Control-Allow-Headers": "Origin, X-Requested-With, Accept, Header, Content-Type, access-control-allow-origin",
@@ -17,7 +17,7 @@ const allowCrossDomain = (req, res, next) => {
         return res.sendStatus(200);
     }
     res.set({
-        "Access-Control-Allow-Origin": "http://localhost:3000",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods":
             "GET, POST, OPTIONS, PUT, PATCH, DELETE",
         "Access-Control-Allow-Headers":
@@ -34,8 +34,18 @@ router.get('/products', (req, res) => {
         .then(data => res.json(data.data))
 })
 
+router.get('/singleproducts', (req, res) => {
+    axios.get(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1051&limit=3`)
+        .then(data => res.json(data.data))
+})
+
 router.get('/products/:token', (req, res) => {
     axios.get(`https://api.mercadolibre.com/users/me/bookmarks?access_token=${req.params.token}`)
+        .then(data => res.json(data.data))
+})
+
+router.get('/product/:id', (req, res) => {
+    axios.get(`https://api.mercadolibre.com/items/${req.params.id}`)
         .then(data => res.json(data.data))
 })
 

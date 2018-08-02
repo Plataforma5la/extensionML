@@ -5,7 +5,7 @@ import Header from './browser/containers/HeaderContainer';
 import Footer from './browser/components/Footer'
 import SingleProduct from './browser/containers/SingleProduct'
 import FavContainer from './browser/containers/FavContainer';
-import axios from 'axios';
+import Axios from './axiosdef';
 import { ClipLoader } from 'react-spinners'
 
 class App extends Component {
@@ -20,6 +20,7 @@ class App extends Component {
     }
     this.handleValor = this.handleValor.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.bookmarkState = this.bookmarkState.bind(this);
   }
 
   componentDidMount() {
@@ -28,16 +29,12 @@ class App extends Component {
         token: window.location.href.split('token=')[1]
       })
     }
-    console.log("hola???", this.state.token)
-    axios.get('/back/products')
+    Axios.get('/back/products')
       .then(data => this.setState({ products: data.data.results }))
       .then(() => {
-        console.log(this.state.token)
         if (this.state.token) {
-          console.log('s')
-          axios.get(`/back/products/${this.state.token}`)
+          Axios.get(`/back/products/${this.state.token}`)
             .then(data => {
-              console.log(data);
               var arr = data.data
               var obj = {}
               for (var i = 0; i < arr.length; i++) {
@@ -49,7 +46,7 @@ class App extends Component {
               this.setState({
                 bookmark: obj
               })
-            )).catch(err => console.log(err));
+            ))
         }
       }
       )
@@ -61,16 +58,40 @@ class App extends Component {
     })
   }
 
+  bookmarkState(id) {
+    if (this.state.bookmark[id]) {
+      Axios({
+        method: 'DELETE',
+        url: `/back/bookmarks/${id}/${this.state.token}`,
+      })
+        .then(() => {
+
+          var bookmark = { ...this.state.bookmark }
+          delete bookmark[id]
+          this.setState({ bookmark })
+        }).then(() => {
+
+        }
+        )
+        .catch(err => {
+          console.log('MESSAGE', err)
+        })
+    }
+
+
+  }
+
   handleClick = id => {
 
     if (!this.state.token) {
       window.location.href = 'https://auth.mercadolibre.com.ar/authorization?response_type=token&client_id=6429131972786101'
     } else if (this.state.bookmark[id]) {
-      axios({
+      Axios({
         method: 'DELETE',
         url: `/back/bookmarks/${id}/${this.state.token}`,
       })
         .then(() => {
+
           var bookmark = { ...this.state.bookmark }
           delete bookmark[id]
           this.setState({ bookmark })
@@ -79,7 +100,7 @@ class App extends Component {
           console.log('MESSAGE', err)
         })
     } else {
-      axios({
+      Axios({
         method: 'POST',
         url: `/back/bookmarks/${id}/${this.state.token}`,
       })
@@ -95,7 +116,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('que trae', this.state.bookmark)
+
     return (
       <div>
         <div className={"fixedHeader"}>
@@ -103,8 +124,8 @@ class App extends Component {
         </div>
         {this.state.products.length === 0 ? <div className="preCargar"><ClipLoader color={"#fff159"} loading={true} /></div> : <div>{this.state.valor === 'home' ? <div className={"cardsContainer"}>
           <CardDealsContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} />
-          <SingleProduct />
-        </div> : <FavContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} valor={this.state.valor} handleValor={this.handleValor} />}<Footer /></div>}
+          <SingleProduct handleClick={this.handleClick} bookmark={this.state.bookmark} />
+        </div> : <FavContainer bookmarkState={this.bookmarkState} bookmark={this.state.bookmark} products={this.state.products} valor={this.state.valor} handleValor={this.handleValor} token={this.state.token} />}<Footer /></div>}
 
 
       </div>
