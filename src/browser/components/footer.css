@@ -41,12 +41,25 @@ h3 {
     line-height: 20px;
     max-height: 40px;   
 } 
+.linkCarrito{
+    
+        float: right;
+        text-align: left;
+        color: #518be2;
+        font-size: 12px;
+        padding-bottom: 5px;
+        padding-left: 11px;
+        text-decoration:none;
+        line-height: 20px;
+        max-height: 40px;   
+    
+}
 
 a:link {text-decoration:none}
 a:visited {text-decoration:none}
 
 #carrito{
-    align-self: center;
+    
     margin-top: 30px;
     margin-left: 10%;
 }
@@ -54,4 +67,31 @@ a:visited {text-decoration:none}
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
+}
+
+.carritoIcon:before {
+    font-family: "navigation";
+    content: '\EA1F';
+    color: #518be2;
+    font-size: 30px;
+    line-height: 45px;
+    font-variant: normal;
+    margin-left: -7px;
+    
+}
+.descuentosMP:before {
+    font-family: "navigation";
+    content: '\EA37';
+    color: #518be2;
+    font-size: 31px;
+    line-height: 45px;
+    
+}
+.ofertasSemana:before {
+    font-family: "navigation";
+    content: '\EA2F';
+    color: #518be2;
+    font-size: 31px;
+    line-height: 45px;
+    
 }
