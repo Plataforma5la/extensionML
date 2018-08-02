@@ -46,12 +46,15 @@
     outline: none;
     border: none;
     cursor: pointer;
-    background-color: hsla(0,0%,100%,.7);
+    background-color: hsla(0,0%,100%,.7); 
     padding: 0;
     display: block;
 }
 
 .itemCardContainer:hover .ui-item_bookmark {
+    display: block;
+}
+.itemCardContainer:hover .eliminar {
     display: block;
 }
 
@@ -141,6 +144,18 @@ img.itemImg {
     cursor: pointer;
     font-weight: 400;
     margin: 0;
+}
+
+.eliminar{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+    text-align: left;
+    color: #518be2;
+    font-size: 11px;
+    display: none;
+
 }
 /* 
 .itemDescRow {

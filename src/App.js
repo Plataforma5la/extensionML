@@ -4,6 +4,7 @@ import CardDealsContainer from './browser/containers/CardDealsContainer'
 import Header from './browser/containers/HeaderContainer';
 import Footer from './browser/components/Footer'
 import SingleProduct from './browser/containers/SingleProduct'
+import FavContainer from './browser/containers/FavContainer';
 import Axios from './axiosdef';
 import { ClipLoader } from 'react-spinners'
 
@@ -15,24 +16,36 @@ class App extends Component {
       bookmark: {},
       token: '',
       products: [],
-
+      access: ''
+      
     }
     this.handleValor = this.handleValor.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.bookmarkState = this.bookmarkState.bind(this);
   }
+
+  
 
   componentDidMount() {
 
-    if (window.location.href.includes('#access_token')) {
-      this.setState({
-        token: window.location.href.split('token=')[1]
+    Axios.get('/back/auth/ml/access')
+      .then(data => {
+        if(data.data === 'unauthorized') {this.setState({
+          access: 'unauthorized'
+        })} else {
+          localStorage.setItem('access-token', data.data)
+        } 
       })
-    }
+      .catch(err => console.log(err))
+
+
+    var token = localStorage.getItem('access-token')
+
     Axios.get('/back/products')
         .then(data => this.setState({products: data.data.results}))
         .then(() => {
-            if(this.state.token){
-            Axios.get(`/back/products/${this.state.token}`)
+          if(this.state.access !== 'unauthorized'){
+            Axios.get(`/back/products/${token}`)
                 .then(data => {
                     var arr = data.data
                     var obj = {}
@@ -46,62 +59,87 @@ class App extends Component {
                         bookmark: obj
                     })
                 ))
-            }}
+                .catch(err => console.log(err))
+            }
+        })
+      }
+
+  bookmarkState(id) {
+
+    var tokenClickFav = localStorage.getItem('access-token')
+
+    if (this.state.bookmark[id]) {
+      Axios({
+        method: 'DELETE',
+        url: `/back/bookmarks/${id}/${tokenClickFav}`,
+      })
+        .then(() => {
+
+          var bookmark = { ...this.state.bookmark }
+          delete bookmark[id]
+          this.setState({ bookmark })
+        }).then(() => {
+
+        }
         )
+        .catch(err => {
+          console.log('MESSAGE', err)
+        })
+      }
     }
 
-  handleValor(id) {
+  handleValor(id){
     this.setState({
       valor: id
     })
   }
 
+      
   handleClick = id => {
-        
-    if(!this.state.token) {
-        window.location.href = 'https://auth.mercadolibre.com.ar/authorization?response_type=token&client_id=6429131972786101'
-    } else if(this.state.bookmark[id]) {
-        Axios({
-          method: 'DELETE',
-          url: `/back/bookmarks/${id}/${this.state.token}`,
-        })
-        .then(() => {
-          var bookmark = { ...this.state.bookmark }
-          delete bookmark[id]
-          this.setState({ bookmark })
-        })
-        .catch(err => {
-          console.log('MESSAGE', err)
+    
+    Axios.get('/back/auth/mercadolibre')
+
+    var tokenClick = localStorage.getItem('access-token')
+    
+    if(this.state.bookmark[id]) {
+      Axios({
+        method: 'DELETE',
+        url: `/back/bookmarks/${id}/${tokenClick}`,
+      })
+      .then(() => {
+        var bookmark = {...this.state.bookmark}
+        delete bookmark[id]
+        this.setState({bookmark})
+      })
+      .catch(err => {
+        console.log('MESSAGE', err)
       })
     } else {
-        Axios({
-            method: 'POST',
-            url: `/back/bookmarks/${id}/${this.state.token}`,
-        })
-        .then(data => {
-          var bookmark = { ...this.state.bookmark }
-          bookmark[data.data.item_id] = data.data.bookmarked_date;
-          this.setState({ bookmark })
-        })
-        .catch(err => {
-          console.log('MESSAGE', err.message)
-        })
-    }
+      Axios({
+        method: 'POST',
+        url: `/back/bookmarks/${id}/${tokenClick}`,
+      })
+      .then(data => {
+        var bookmark = { ...this.state.bookmark }
+        bookmark[data.data.item_id] = data.data.bookmarked_date;
+      this.setState({ bookmark })
+    })
+    .catch(err => {
+      console.log('MESSAGE', err.message)
+    })
   }
-
-  render() {
-    return (
-      <div>
+}
+    
+    render() {
+      return (
+        <div>
         <div className={"fixedHeader"}>
           <Header handleValor={this.handleValor} valor={this.state.valor} />
         </div>
-
         {this.state.products.length === 0 ? <div className="preCargar"><ClipLoader color={"#fff159"} loading={true} /></div> : <div>{this.state.valor === 'home' ? <div className={"cardsContainer"}>
-          <CardDealsContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} />
-          <SingleProduct />
-        </div> : null}<Footer /></div> }
-          
-        
+          <CardDealsContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} access={this.state.access}/>
+          <SingleProduct handleClick={this.handleClick} bookmark={this.state.bookmark} />
+        </div> : <FavContainer bookmarkState={this.bookmarkState} bookmark={this.state.bookmark} products={this.state.products} valor={this.state.valor} handleValor={this.handleValor} token={this.state.token} />}<Footer /></div>}
       </div>
     );
   }

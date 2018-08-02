@@ -1,45 +1,44 @@
 import React from 'react';
 import CardDeals from '../components/cardDeals';
-import axios from 'axios';
+import Axios from '../../axiosdef';
 
-const fav = [
-    {
-        id: 'MLM609373763',
-        permalink: 'https://articulo.mercadolibre.com.mx/MLM-609373763-mochila-antirrobo-viaje-bolsas-gps-tracker-impermeable-e-_JM',
-        title: ' Mochila Antirrobo Viaje Bolsas Gps Tracker Impermeable /e',
-        thumbnail: 'http://mlm-s2-p.mlstatic.com/678569-MLM27822635689_072018-I.jpg',
-        price: 550,
-        original_price: null,
-    },
-    {
-        id: 'MLM549626037',
-        permalink: "https://articulo.mercadolibre.com.mx/MLM-549626037-sensfoot-zapatos-chef-cocina-restaurante-doctores-_JM",
-        title: ' Sensfoot Zapatos Chef, Cocina, Restaurante, Doctores',
-        thumbnail: "http://mlm-s2-p.mlstatic.com/907578-MLM27318532954_052018-I.jpg",
-        price:
-            750,
-        original_price: null,
-    },
-    {
-        id: 'MLM600959359',
-        permalink: "https://articulo.mercadolibre.com.mx/MLM-600959359-corset-reductor-faja-cinturilla-colombiana-lenceria-_JM",
-        title: ' Corset Reductor Faja Cinturilla Colombiana Lenceria',
-        thumbnail: "http://mlm-s2-p.mlstatic.com/813084-MLM27151074556_042018-I.jpg",
-        price:
-            245,
-        original_price: null,
-    }
-]
 
 class FavContainer extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            fav: []
         }
+        this.favUpdate = this.favUpdate.bind(this);
     }
+    favUpdate(fav) {
+        const bookmark = fav.bookmark
+        var favAux = []
+        var p = []
+        Object.keys(bookmark).forEach((element, index) => {
+            p.push(Axios.get(`/back/product/${element}`).then(result => {
+                favAux.push(result.data)
+            }))
+        })
+        Promise.all(p).then(() => this.setState({
+            fav: favAux
+        }))
+    }
+    componentDidMount() {
+
+        this.favUpdate(this.props)
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.favUpdate(nextProps)
+    }
+
     render() {
-        return <CardDeals favProducts={fav} />
+
+        const { bookmark, valor, handleValor, bookmarkState } = this.props
+
+        return <CardDeals bookmarkState={bookmarkState} bookmark={bookmark} fav={this.state.fav} valor={valor} handleValor={handleValor} />
     }
 
 }
