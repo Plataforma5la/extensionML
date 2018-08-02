@@ -11,8 +11,8 @@ class CardDealsContainer extends React.Component {
     }
 
     render() {
-    const { handleClick, bookmark, products } = this.props
-     return <CardDeals handleClick={handleClick} bookmark={bookmark} products={products}/>
+    const { handleClick, bookmark, products, access } = this.props
+     return <CardDeals handleClick={handleClick} bookmark={bookmark} products={products} access={access}/>
     }
 
 }
