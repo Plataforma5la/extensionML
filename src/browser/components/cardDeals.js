@@ -72,11 +72,13 @@ export default props => {
                         )
                     })}
                 </div>
-                <div>
+                {(valor !== 'carrito')
+                ?<div>
                     <div className={"more-offers-button"}>
                         <a href={'https://ofertas.mercadolibre.com.ar/ofertas-de-la-semana'} target={"_blank"}><button className={"ui-button"}>Ver todas las ofertas</button></a>
                     </div>
                 </div>
+                :null}
             </div>
         </div>
     )
