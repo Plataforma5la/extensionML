@@ -1,6 +1,6 @@
 import React from 'react';
 import './cardBanner.css';
-import imagen from '../imagenes/bannerml.jpg'
+import imagen from '../imagenes/imagen3.jpg'
 
 
 
@@ -10,10 +10,10 @@ export default function () {
         <div className={"CardBanner"} >
 
             <div>
-                <a href={'https://tienda.mercadolibre.com.mx/avent-philips#c_id=/home/official-stores/element&c_brand_name=Avent%20Philips&c_element_order=2'} target={"_blank"} >
+                <a href={'https://ofertas.mercadolibre.com.mx/espacios-de-diseno#DEAL_ID=MLM107&S=homedesktop&V=5&L=espaciosdediseno&c_id=/home/exhibitors-carousel/element&c_campaign=http://ofertas.mercadolibre.com.mx/espacios-de-diseno#DEAL_ID=MLM107&S=homedesktop&V=5&L=espaciosdediseno&c_element_order=4'} target={"_blank"} >
 
                     <img id={'imgB'} src={imagen} alt='img' />
-                    <span id={'linkTextB'} >Ver en Tienda  </span>
+
                 </a>
 
             </div>
