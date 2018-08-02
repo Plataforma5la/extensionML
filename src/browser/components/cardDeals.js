@@ -41,7 +41,7 @@ export default props => {
                                     <div className={"itemDetail"}>
                                         <div className={"itemPriceRow"}>
                                             <span className={"primaryTitle"}>
-                                                <span className={"itemPrecio"}>{"$" + item.price}</span>
+                                                <span className={"itemPrecio"}>{"$" + (item.price).toFixed(0)}</span>
                                                 {(valor === 'carrito')
                                                     ? <div> {<button onClick={() => bookmarkState(item.id)} className={"eliminar"} >Eliminar </button>}
                                                     </div>
@@ -59,7 +59,7 @@ export default props => {
                                                 
                                             </span>
                                             {(item.original_price)
-                                                ? <span><span className={"itemDiscount"}>{(Math.floor(((item.original_price - item.price) / item.original_price) * 100)).toFixed(0) + "% OFF"}</span><span className={"itemPrecioOld itemPrecioOld:hover"}>{"$" + item.original_price}</span></span>
+                                                ? <span><span className={"itemDiscount"}>{(Math.floor(((item.original_price - item.price) / item.original_price) * 100)).toFixed(0) + "% OFF"}</span><span className={"itemPrecioOld itemPrecioOld:hover"}>{"$" + (item.original_price).toFixed(0)}</span></span>
                                                 : null
                                             }
                                         </div>
