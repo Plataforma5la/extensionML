@@ -26,14 +26,8 @@
 }
 
 .headerInput {
-    height: 100%;
     background-color: rgb(255, 241, 89);
     padding: 10px;
-    margin-bottom: 10px;
-}
-
-.headerList {
-    height: 100%;
 }
 
 #query {
@@ -59,6 +53,7 @@
     border-radius: 2px;
     text-align: center;
     display: flex;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
 }
 
 
@@ -70,6 +65,7 @@
     padding: 10px;
     font-family: "Proxima Nova";
     margin-left: 20px;
+    color: rgba(51,51,51,.6);
 }
 
 .seleccionado {
@@ -80,7 +76,7 @@
     list-style: none;
     display: flex;
     background-color: rgb(255, 241, 89);
-    margin-top: -20px;
+    margin-top: -9px;
 }
 .botones-hl {
     text-align: center;

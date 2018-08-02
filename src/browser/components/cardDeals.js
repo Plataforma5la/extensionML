@@ -27,13 +27,14 @@ export default props => {
                         var length = 100;
                         var myString = item.title;
                         var myTruncatedString = () => {
-                            if (item.title.length > 100) {
+                            if (item.title.length > 50) {
                                 return myString.substring(0, length) + "..."
                             }
                             else {
                                 return myString
                             }
                         }
+                        console.log(item.title.length)
                         return (
                             <div key={item.id} className={"itemCardContainer"}>
                                 <div className={"itemCard"}>
@@ -41,7 +42,7 @@ export default props => {
                                     <div className={"itemDetail"}>
                                         <div className={"itemPriceRow"}>
                                             <span className={"primaryTitle"}>
-                                                <span className={"itemPrecio"}>{"$" + item.price}</span>
+                                                <span className={"itemPrecio"}>{"$" + (item.price).toFixed(0)}</span>
                                                 {(valor === 'carrito')
                                                     ? <div> {<button onClick={() => bookmarkState(item.id)} className={"eliminar"} >Eliminar </button>}
                                                     </div>
@@ -59,7 +60,7 @@ export default props => {
                                                 
                                             </span>
                                             {(item.original_price)
-                                                ? <span><span className={"itemDiscount"}>{(Math.floor(((item.original_price - item.price) / item.original_price) * 100)).toFixed(0) + "% OFF"}</span><span className={"itemPrecioOld itemPrecioOld:hover"}>{"$" + item.original_price}</span></span>
+                                                ? <span><span className={"itemDiscount"}>{(Math.floor(((item.original_price - item.price) / item.original_price) * 100)).toFixed(0) + "% OFF"}</span><span className={"itemPrecioOld itemPrecioOld:hover"}>{"$" + (item.original_price).toFixed(0)}</span></span>
                                                 : null
                                             }
                                         </div>
@@ -71,6 +72,11 @@ export default props => {
                             </div>
                         )
                     })}
+                </div>
+                <div className={"cardFooter"}>
+                    <div className={"more-offers-button"}>
+                        <a href={'https://ofertas.mercadolibre.com.ar/ofertas-de-la-semana'} target={"_blank"}><button className={"ui-button"}>Ver todas las ofertas</button></a>
+                    </div>
                 </div>
             </div>
         </div>
