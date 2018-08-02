@@ -27,13 +27,14 @@ export default props => {
                         var length = 100;
                         var myString = item.title;
                         var myTruncatedString = () => {
-                            if (item.title.length > 100) {
+                            if (item.title.length > 50) {
                                 return myString.substring(0, length) + "..."
                             }
                             else {
                                 return myString
                             }
                         }
+                        console.log(item.title.length)
                         return (
                             <div key={item.id} className={"itemCardContainer"}>
                                 <div className={"itemCard"}>
@@ -71,6 +72,11 @@ export default props => {
                             </div>
                         )
                     })}
+                </div>
+                <div className={"cardFooter"}>
+                    <div className={"more-offers-button"}>
+                        <a href={'https://ofertas.mercadolibre.com.ar/ofertas-de-la-semana'} target={"_blank"}><button className={"ui-button"}>Ver todas las ofertas</button></a>
+                    </div>
                 </div>
             </div>
         </div>
