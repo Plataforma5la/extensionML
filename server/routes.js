@@ -1,8 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
+const passport = require('passport')
+var MercadoLibreStrategy = require('passport-mercadolibre').Strategy;
 
 module.exports = router;
+
+var token = null;
 
 const allowCrossDomain = (req, res, next) => {
     // intercept OPTIONS method
@@ -27,7 +31,37 @@ const allowCrossDomain = (req, res, next) => {
     next();
 };
 
+
+
 router.use(allowCrossDomain);
+
+passport.use(new MercadoLibreStrategy({
+    clientID: '6429131972786101',
+    clientSecret: 'iFuKIyLLhpbg99KyrsPCUqVSleiHYhcf',
+    callbackURL: 'http://localhost:3001/back/auth/mercadolibre/callback',
+  },
+  function (accessToken, refreshToken, profile, done) {
+      token = accessToken;
+    // + store/retrieve user from database, together with access token and refresh token
+    return done(null, profile); 
+  }
+));
+
+router.get('/auth/mercadolibre', passport.authorize('mercadolibre'));
+
+router.get('/auth/mercadolibre/callback', passport.authorize('mercadolibre'), function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('http://www.mercadolibre.com.ar');
+});
+
+router.get('/auth/ml/access', (req, res) => {
+    if (token) {
+        res.json(token)
+    } else {
+        res.send('unauthorized')
+    }
+    
+})
 
 router.get('/products', (req, res) => {
     axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1430&limit=5&price=549-650`)
@@ -41,12 +75,8 @@ router.get('/singleproducts', (req, res) => {
 
 router.get('/products/:token', (req, res) => {
     axios.get(`https://api.mercadolibre.com/users/me/bookmarks?access_token=${req.params.token}`)
-        .then(data => res.json(data.data))
-})
-
-router.get('/product/:id', (req, res) => {
-    axios.get(`https://api.mercadolibre.com/items/${req.params.id}`)
-        .then(data => res.json(data.data))
+    .then(data => res.json(data.data))
+    .catch(err => console.log(err.message))
 })
 
 router.post('/bookmarks/:id/:token', (req, res) => {

@@ -8,9 +8,17 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, '../build')));
 
+||||||| merged common ancestors
+   
+=======
+
+   
+>>>>>>> origin/15-Bookmarks-logic
 app.use('/back', routes);
+// app.use(express.static(path.join(__dirname, '../build')));
 
 
 
