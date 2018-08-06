@@ -15,16 +15,6 @@
     margin-top: 15px;
 }
 
-#lupa {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 2px;
-    cursor: pointer;
-    font-family: 'navigation';
-    
-}
-
 .headerInput {
     background-color: rgb(255, 241, 89);
     padding: 10px;
@@ -35,9 +25,10 @@
     width: calc(100% - 35px);
     border: none;
     height: 25px;
-    margin-left: 7px;
     font-size: 14px;
     font-family: "Proxima Nova", Arial, sans-serif;
+    margin-left: 0;
+    
 
 }
 
@@ -48,24 +39,96 @@
     border-radius: 2px
 }
 
-.formulario {
-    background-color: white;
-    border-radius: 2px;
-    text-align: center;
+.nav-search {
+    
+    z-index: 910;
+    transition: left .15s ease-out;
+    position: absolute;
+    left: 65px;
+    top: 0;
+    height: 50px;
     display: flex;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    justify-content: center;
+    align-items: center;
 }
 
+.nav-search-input {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    border: 0 rgba(0,0,0,.2);
+    color: #333;
+    font-size: 16px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 2px 55px 6px 40px;
+    font-family: inherit;
+    margin-left: 15px;
+}
 
+.nav-logo {
+    background-image: url(https://mlstaticquic-a.akamaihd.net/ui/navigation/4.0.3/mercadolibre/logo__small.png);
+    text-indent: -999px;
+    background-repeat: no-repeat;
+    height: 28px;
+    overflow: hidden;
+    width: 39px;
+    top: 11px;
+    position: absolute;
+    left: 10px;
+    display: inline-block;
+}
+
+.nav-header {
+    background-color: #fff159;
+    border: 0;
+    position: relative;
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 54px;
+    flex: 1;
+
+}
+
+.nav-header-logo {
+    display: flex;
+    flex: 0.2;
+}
+
+.nav-bounds {
+    display: flex;
+    flex: 0.7;
+}
+
+.nav-boton {
+    padding-top: 17px;
+    margin-left: 160px;
+}
 
 .botones {
     background-color: rgb(255, 241, 89);
     border: none;
     cursor: pointer;
-    padding: 10px;
     font-family: "Proxima Nova";
-    margin-left: 20px;
     color: rgba(51,51,51,.6);
+}
+
+.boton-lupa {
+    position: absolute;
+    top: 0;
+    height: 50px;
+    padding: 0;
+    width: 36px;
+    background: 0 0;
+    border: none;
+    color: #666;
+    line-height: 1em;
+    outline: 0;
+    left: 0;
 }
 
 .seleccionado {
@@ -84,4 +147,21 @@
 
 .li-boton {
     margin-left: 25px;
+}
+
+.nav-icon-bookmarks:before {
+    font-family: "navigation";
+    content: '\EA1E';
+    font-size: 20px;
+}
+
+.nav-icon-stores-mobile:before {
+    font-family: "navigation";
+    content: '\EA39';
+    font-size: 20px;
+}
+
+.nav-icon-search:before {
+    font-family: "navigation";
+    content: '\EA2A';
 }
