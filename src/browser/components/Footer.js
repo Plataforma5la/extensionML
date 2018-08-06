@@ -4,8 +4,25 @@ import './footer.css';
 export default () => (
 
     <div className={"Footer"}>
-        <div className={"InnerFooter"}>
-            <h3>Conocé nuestras ofertas!
+        <div className={"listado"} >
+            <div className={"linksTodos"} >
+
+                <a href="https://myaccount.mercadolibre.com.ar" target={"_blank"} >Mi Cuenta </a>
+                <a href="https://myaccount.mercadolibre.com.ar/purchases/list/" target={"_blank"} > Tus Compras </a>
+                <a href="https://www.mercadolibre.com.ar/gz/home/navigation" target={"_blank"} > Tus Historial </a>
+                <a href="https://ofertas.mercadolibre.com.ar/ofertas-de-la-semana" target={"_blank"} > Ofertas de la Semana </a>
+                <a href="https://myaccount.mercadolibre.com.ar/bookmarks/list" target={"_blank"} > Favoritos </a>
+                <a href="https://www.mercadolibre.com.ar/tiendas-oficiales" target={"_blank"} > Tiendas Oficiales </a>
+                <a href="https://home.mercadolibre.com.ar/categories" target={"_blank"} > Categorías </a>
+                <a href="https://www.mercadolibre.com.ar/mercadopuntos" target={"_blank"} > Mercado Puntos </a>
+                <a href="https://www.mercadolibre.com.ar/ayuda" target={"_blank"} > Ayuda</a>
+                <a href="https://vender.mercadolibre.com.ar" target={"_blank"} > Vender</a>
+
+
+
+
+
+                {/* <h3>Conocé nuestras ofertas!
  </h3>
             <h4 id={"secondary-title"} >
                 Visitanos y descrubrí nuestros productos.
@@ -31,7 +48,12 @@ export default () => (
                         <p className={"links"}> Más ofertas</p>
                     </a>
                 </div>
-            </div>
+            </div> */}</div>
+
+        </div>
+        <div className={'border'}>
+            <span className={'copy'}> Copyright © 1999-2018 MercadoLibre S.R.L.
+</span>
         </div>
     </div>
 

@@ -1,0 +1,11 @@
+
+.CardBanner {
+    margin-top: 10px;
+    margin-bottom: 0.5px;
+}
+ #imgB {
+    height: auto; 
+    width: auto; 
+     max-width: 100%;
+     box-shadow: 0 1px 6px rgb(0, 0, 0, .3);   
+} 
