@@ -32,7 +32,6 @@ const allowCrossDomain = (req, res, next) => {
 };
 
 
-
 router.use(allowCrossDomain);
 
 passport.use(new MercadoLibreStrategy({
