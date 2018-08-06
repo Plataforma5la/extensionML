@@ -18,9 +18,12 @@ export default class SingleProduct extends React.Component {
 
         Axios.get('/back/singleproducts')
             .then(result => {
-                return result.data.results
-            }).then(result => {
+                return result.data
+            })
+            // .then(result => console.log('anda', result))
+            .then(result => {
                 result.forEach((element, index) => {
+
                     return Axios.get(`/back/product/${element.id}`).then(result => {
 
                         this.setState(({ cards }) => ({

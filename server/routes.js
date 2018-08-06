@@ -39,17 +39,17 @@ passport.use(new MercadoLibreStrategy({
     clientID: '6429131972786101',
     clientSecret: 'iFuKIyLLhpbg99KyrsPCUqVSleiHYhcf',
     callbackURL: 'http://localhost:3001/back/auth/mercadolibre/callback',
-  },
-  function (accessToken, refreshToken, profile, done) {
-      token = accessToken;
-    // + store/retrieve user from database, together with access token and refresh token
-    return done(null, profile); 
-  }
+},
+    function (accessToken, refreshToken, profile, done) {
+        token = accessToken;
+        // + store/retrieve user from database, together with access token and refresh token
+        return done(null, profile);
+    }
 ));
 
 router.get('/auth/mercadolibre', passport.authorize('mercadolibre'));
 
-router.get('/auth/mercadolibre/callback', passport.authorize('mercadolibre'), function(req, res) {
+router.get('/auth/mercadolibre/callback', passport.authorize('mercadolibre'), function (req, res) {
     // Successful authentication, redirect home.
     res.redirect('http://www.mercadolibre.com.ar');
 });
@@ -60,17 +60,28 @@ router.get('/auth/ml/access', (req, res) => {
     } else {
         res.send('unauthorized')
     }
-    
+
 })
 
 router.get('/products/card/:category', (req, res) => {
     axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=${req.params.category}&limit=1&price=549-650`)
         .then(data => res.json(data.data))
 })
-
 router.get('/singleproducts', (req, res) => {
-    axios.get(`https://api.mercadolibre.com/sites/MLM/search?category=MLM1051&limit=3`)
-        .then(data => res.json(data.data))
+    Promise.all([axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1246&limit=1&price=549-650`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1403&q=cerveza&limit=1`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1144&limit=1&price=549-650
+    `)])
+        .then(result => {
+            var resultado = [];
+            result.forEach(element => {
+                resultado.push(element.data.results[0])
+            });
+            return resultado
+        })
+        .then(resultado => res.json(resultado))
+        .catch(e => {
+            console.log(e);
+        })
+
 })
 
 router.get('/product/:id', (req, res) => {
@@ -80,8 +91,8 @@ router.get('/product/:id', (req, res) => {
 
 router.get('/products/:token', (req, res) => {
     axios.get(`https://api.mercadolibre.com/users/me/bookmarks?access_token=${req.params.token}`)
-    .then(data => res.json(data.data))
-    .catch(err => console.log(err.message))
+        .then(data => res.json(data.data))
+        .catch(err => console.log(err.message))
 })
 
 router.post('/bookmarks/:id/:token', (req, res) => {
