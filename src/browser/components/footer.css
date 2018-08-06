@@ -3,95 +3,51 @@
     background-color: #fff;
     height: 350px;
     width: 100%;
-}
-
-
-h3 {
-    margin-left: 30px;
-    text-align: left;
-    font-size: 20px;
-    margin-bottom: 1px
-}
-
-#border{
-    margin-top: 10px;
-    margin-left: -16px;
-    width: 100%;
-    border-bottom: 1px solid #e3e3e3;
+    box-shadow: 0 1px 6px rgb(0, 0, 0, .3);
+   
     
 }
-#secondary-title {
-    margin-left: 30px;
-    margin-bottom:  15px;
-    color: #767676;
-    font-size: 12px;
-    padding-bottom: 1px;
-    margin-top: 6px;
-    margin-bottom: 6px;    
+.listado{
+    padding: 22px;
+    padding-bottom: 30px;
+    
 }
 
-.links{
-    float: right;
-    text-align: left;
-    color: #518be2;
-    font-size: 12px;
-    padding-bottom: 5px;
-    padding-left: 15px;
+.linksTodos{
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Proxima Nova'
+}
+.linksTodos a:link {
     text-decoration:none;
-    line-height: 20px;
-    max-height: 40px;   
-} 
-.linkCarrito{
-    
-        float: right;
-        text-align: left;
-        color: #518be2;
-        font-size: 12px;
-        padding-bottom: 5px;
-        padding-left: 11px;
-        text-decoration:none;
-        line-height: 20px;
-        max-height: 40px;   
-    
+    color: #333;
+    font-size: 14px;
+    font-family: 'Proxima Nova';
+    line-height: 2.79;
+    display: inline-block;
+    width: 50%;
+}
+    a:link {text-decoration:none;}
+
+a:visited {
+    text-decoration:none;
+  
 }
 
-a:link {text-decoration:none}
-a:visited {text-decoration:none}
-
-#carrito{
-    
-    margin-top: 30px;
-    margin-left: 10%;
-}
-.flex{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
+.border{
+    border-top: solid 1px #eee;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-top: 13px;
 }
 
-.carritoIcon:before {
-    font-family: "navigation";
-    content: '\EA1F';
-    color: #518be2;
-    font-size: 30px;
-    line-height: 45px;
-    font-variant: normal;
-    margin-left: -7px;
-    
+.copy{
+    font-size: 12px;
+    color: #999;
+    font-weight: 300;
+    vertical-align: top;
+    margin-left: 22px;
 }
-.descuentosMP:before {
-    font-family: "navigation";
-    content: '\EA37';
-    color: #518be2;
-    font-size: 31px;
-    line-height: 45px;
-    
-}
-.ofertasSemana:before {
-    font-family: "navigation";
-    content: '\EA2F';
-    color: #518be2;
-    font-size: 31px;
-    line-height: 45px;
-    
-}
+
+
