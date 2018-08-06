@@ -41,31 +41,38 @@ class App extends Component {
       })
       .catch(err => console.log(err))
 
+    var prodArr = [];
+    var token = localStorage.getItem('access-token');
 
-    var token = localStorage.getItem('access-token')
-
-    Axios.get('/back/products')
-      .then(data => this.setState({ products: data.data.results }))
-      .then(() => {
-        if (this.state.access !== 'unauthorized') {
-          Axios.get(`/back/products/${token}`)
-            .then(data => {
-              var arr = data.data
-              var obj = {}
-              for (var i = 0; i < arr.length; i++) {
-                obj[arr[i].item_id] = arr[i].bookmarked_date;
-              }
-              return obj;
-            })
-            .then(obj => (
-              this.setState({
-                bookmark: obj
-              })
-            ))
-            .catch(err => console.log(err))
-        }
-      })
-  }
+    Axios.get('/back/products/card/MLA1051')
+        .then(data => prodArr.push(data.data.results[0]))
+        .then(() => Axios.get('/back/products/card/MLA3502'))
+        .then(data => prodArr.push(data.data.results[0]))
+        .then(() => Axios.get('/back/products/card/MLA1574'))
+        .then(data => prodArr.push(data.data.results[0]))
+        .then(() => this.setState({
+          products: prodArr
+        }))
+        .then(() => {
+          if(this.state.access !== 'unauthorized'){
+            Axios.get(`/back/products/${token}`)
+                .then(data => {
+                    var arr = data.data
+                    var obj = {}
+                    for(var i = 0; i < arr.length; i++){
+                        obj[arr[i].item_id] = arr[i].bookmarked_date;
+                    }
+                    return obj;
+                })
+                .then(obj => (
+                    this.setState({
+                        bookmark: obj
+                    })
+                ))
+                .catch(err => console.log(err))
+            }
+        })
+      }
 
   bookmarkState(id) {
 
