@@ -38,11 +38,18 @@ class App extends Component {
       })
       .catch(err => console.log(err))
 
+    var prodArr = [];
+    var token = localStorage.getItem('access-token');
 
-    var token = localStorage.getItem('access-token')
-
-    Axios.get('/back/products')
-        .then(data => this.setState({products: data.data.results}))
+    Axios.get('/back/products/card/MLA1051')
+        .then(data => prodArr.push(data.data.results[0]))
+        .then(() => Axios.get('/back/products/card/MLA3502'))
+        .then(data => prodArr.push(data.data.results[0]))
+        .then(() => Axios.get('/back/products/card/MLA1574'))
+        .then(data => prodArr.push(data.data.results[0]))
+        .then(() => this.setState({
+          products: prodArr
+        }))
         .then(() => {
           if(this.state.access !== 'unauthorized'){
             Axios.get(`/back/products/${token}`)

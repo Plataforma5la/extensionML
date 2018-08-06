@@ -63,8 +63,8 @@ router.get('/auth/ml/access', (req, res) => {
     
 })
 
-router.get('/products', (req, res) => {
-    axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1430&limit=5&price=549-650`)
+router.get('/products/card/:category', (req, res) => {
+    axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=${req.params.category}&limit=1&price=549-650`)
         .then(data => res.json(data.data))
 })
 
