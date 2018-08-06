@@ -1,8 +1,5 @@
 import React from 'react';
-import HeaderTop from '../components/HeaderTop';
 import HeaderInput from '../components/HeaderInput';
-import HeaderList from '../components/HeaderList'
-
 
 class HeaderContainer extends React.Component {
     constructor(props) {
@@ -26,11 +23,11 @@ class HeaderContainer extends React.Component {
 
     handleSubmit(e) {
         if (!this.state.value) {
-            window.open("http://mercadolibre.com.mx")
+            window.open("http://mercadolibre.com.ar")
             e.preventDefault();
         }
         else {
-            window.open("http://listado.mercadolibre.com.mx/" + this.state.value);
+            window.open("http://listado.mercadolibre.com.ar/" + this.state.value);
             e.preventDefault()
             this.setState({
                 value: ''
@@ -38,23 +35,24 @@ class HeaderContainer extends React.Component {
         }
     }
 
-    handleClick(id) {
-        if (this.state.condition !== id) {
+    handleClick() {
+        if (this.props.valor === 'home') {
+            this.props.handleValor('carrito')
             this.setState({
-                condition: id
+                condition: 'carrito'
             })
-            this.props.handleValor(id)
         }
-
+        else if (this.props.valor === 'carrito') {
+            this.props.handleValor('home')
+            this.setState({
+                condition: 'home'
+            })
+        }
     }
 
     render() {
         return (
-            <div>
-                <HeaderTop />
-                <HeaderInput value={this.state.value} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
-                <HeaderList condition={this.state.condition} handleClick={this.handleClick} />
-            </div>
+            <HeaderInput value={this.state.value} handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleClick={this.handleClick} condition={this.state.condition} />
         )
     }
 }
