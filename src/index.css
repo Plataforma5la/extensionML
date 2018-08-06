@@ -1,8 +1,33 @@
+* {
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  overflow: hidden;
+}
+
 body {
-  margin: 0;
+  margin: 122px 0 0 0;
   padding: 0;
-  font-family: sans-serif;
-  height: 600px;
+  height: 493px;
   width: 320px;
+  font-family: "Proxima Nova", Arial, sans-serif;
   background: #ccc;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: #ccc;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(179, 178, 178);
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #ccc;
 }

@@ -1,0 +1,171 @@
+.card {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    box-shadow: 0 1px 6px rgb(0, 0, 0, .3);
+    border-radius: 1px;
+    position: relative;
+}
+
+.cardContent {
+    padding: 15px;
+}
+
+.cardHeader {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 4px;
+    margin: 0;
+    width: 100%;
+}
+
+.ui-item_bookmark {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: hsla(0,0%,100%,.7);
+    padding: 0;
+    display: none;
+}
+
+.ui-item_bookmark:hover .ui-item_bookmark_icon {
+    fill: #1259c3
+}
+
+.ui-item_bookmark_icon {
+    fill: #3483fa;
+    width: 18px;
+    left: 9px;
+}
+
+.ui-item_bookmark_added {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: hsla(0,0%,100%,.7); 
+    padding: 0;
+    display: block;
+}
+
+.itemCardContainer:hover .ui-item_bookmark {
+    display: block;
+}
+.itemCardContainer:hover .eliminar {
+    display: block;
+}
+
+.cardItemsContainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.itemCardContainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.itemCard {
+    text-align: left;
+    min-height: 60px;
+}
+
+.itemImg {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 35%;
+    padding-right: 10px;
+}
+
+img.itemImg {
+    max-height: 80px;
+    max-width: 80px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.itemDetail {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 63%;
+}
+
+.itemPriceRow {
+    margin-bottom: 2px;
+}
+
+.primaryTitle {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.itemPrecio {
+    font-size: 16px;
+}
+
+.itemPrecioOld {
+    font-size: 13px;
+    line-height: 18px;
+    text-decoration: line-through;
+    margin-left: 5px;
+    transition: all .2s ease-in-out;
+    opacity: 0;
+}
+
+.itemCardContainer:hover .itemPrecioOld {
+    color: #767676;
+    opacity: 1;
+}
+
+.itemDiscount {
+    font-size: 14px;
+    color: #39b54a;
+}
+
+.itemTitleRow {
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+
+.itemTitle {
+    font-size: 13px;
+    color: #666;
+    text-align: left;
+    line-height: 15px;
+    max-height: 30px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 400;
+    margin: 0;
+}
+
+.eliminar{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+    text-align: left;
+    color: #518be2;
+    font-size: 11px;
+    display: none;
+
+}
+/* 
+.itemDescRow {
+    display: flex;
+}
+
+.itemDesc {
+    font-size: 11px;
+    color:#666;
+    font-weight: 300;
+    width: 100%;
+    margin: 0;
+} */

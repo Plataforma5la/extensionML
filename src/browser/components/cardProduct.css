@@ -1,0 +1,154 @@
+
+.Card {
+    border-top: 10px solid #cccccc;
+    background-color: #ffffff;
+    height: 100%;
+    width: 100%;
+}
+
+.titulo{
+    margin-left: 30px;
+    text-align: left;
+    color: #767676;
+    font-size: 11px;
+    padding: 2px;
+}
+.precios{
+    margin-top: 5px;
+    margin-left: 30px;
+    text-align: left;
+    color: #767676;
+    font-size: 14px;
+    padding-bottom: 1px;
+}
+.precio{
+    color:black;
+    font-size: 20px;
+}
+.precioAntes{
+    color: #c9c8c8;
+    font-size: 14px;
+    text-decoration:line-through;
+    margin-left: 3px;
+}
+.descuento{
+    color: #62c26f;
+    font-size: 18px;
+    margin-left: 5px;
+}
+.oferta{
+    background-color:#fef065;
+    height: 20px;
+    width: 50%;
+    margin-top: 15px;
+}
+
+
+.nombre {
+    margin-left: 30px;
+    margin-right: 14px;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 0px;
+    line-height: 23px;
+   
+}
+
+.secondary-description {
+   
+    margin-left: 30px;
+    text-align: left;
+    color: #767676;
+    font-size: 14px;
+    margin-top: 12px;
+    padding-bottom: 3px;
+}
+#img {
+    height: auto; 
+    width: auto; 
+    max-height: 200px;
+    max-width: 260px;
+    align-self: center;
+    overflow: hidden;
+    margin: 25px;
+    margin-left:25px;
+}
+a:link{text-decoration:none}
+a:visit{text-decoration:none}
+
+#linkText{
+font-size: 14px;
+color: #fff;
+display: block;
+text-align: center;
+display: flex;
+margin-left:8px;
+}
+.contenedor{
+    background-color:#3a86f7;
+    height: 35px;
+    width: 60%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor:pointer;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding-left: 20px
+}
+.ui-item_bookmark2 {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: hsla(0,0%,100%,.7);
+    padding: 0;
+    display: none;
+    float: right;
+    margin-right: 30px;
+    margin-top: -17px;
+
+}
+
+.ui-item_bookmark2:hover .ui-item_bookmark_icon2 {
+    fill: #1259c3
+}
+
+.ui-item_bookmark_icon2 {
+    fill: #3483fa;
+    width: 22px;
+    left: 9px;
+}
+
+.ui-item_bookmark_added2 {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: hsla(0,0%,100%,.7);
+    padding: 0;
+    display: block;
+    float: right;
+    margin-right: 30px;
+    margin-top: -17px;
+}
+
+.Card:hover .ui-item_bookmark2 {
+    display: block;
+}
+
+
+/* .button{
+    background-color:#3a86f7;
+    height: 40px;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    cursor:pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 10px;
+} */

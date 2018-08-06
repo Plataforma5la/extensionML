@@ -1,0 +1,97 @@
+.Footer {
+    border-top: 10px solid #cccccc;
+    background-color: #fff;
+    height: 350px;
+    width: 100%;
+}
+
+
+h3 {
+    margin-left: 30px;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 1px
+}
+
+#border{
+    margin-top: 10px;
+    margin-left: -16px;
+    width: 100%;
+    border-bottom: 1px solid #e3e3e3;
+    
+}
+#secondary-title {
+    margin-left: 30px;
+    margin-bottom:  15px;
+    color: #767676;
+    font-size: 12px;
+    padding-bottom: 1px;
+    margin-top: 6px;
+    margin-bottom: 6px;    
+}
+
+.links{
+    float: right;
+    text-align: left;
+    color: #518be2;
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    text-decoration:none;
+    line-height: 20px;
+    max-height: 40px;   
+} 
+.linkCarrito{
+    
+        float: right;
+        text-align: left;
+        color: #518be2;
+        font-size: 12px;
+        padding-bottom: 5px;
+        padding-left: 11px;
+        text-decoration:none;
+        line-height: 20px;
+        max-height: 40px;   
+    
+}
+
+a:link {text-decoration:none}
+a:visited {text-decoration:none}
+
+#carrito{
+    
+    margin-top: 30px;
+    margin-left: 10%;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.carritoIcon:before {
+    font-family: "navigation";
+    content: '\EA1F';
+    color: #518be2;
+    font-size: 30px;
+    line-height: 45px;
+    font-variant: normal;
+    margin-left: -7px;
+    
+}
+.descuentosMP:before {
+    font-family: "navigation";
+    content: '\EA37';
+    color: #518be2;
+    font-size: 31px;
+    line-height: 45px;
+    
+}
+.ofertasSemana:before {
+    font-family: "navigation";
+    content: '\EA2F';
+    color: #518be2;
+    font-size: 31px;
+    line-height: 45px;
+    
+}

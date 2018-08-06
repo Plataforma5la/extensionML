@@ -1,0 +1,91 @@
+*:focus { outline: none; } 
+
+.headerTop {
+    background-color: rgb(255, 241, 89);
+    height: 47px;
+    width: 100%;
+}
+
+.logo{
+    text-align: center
+}
+
+#logoMeli {
+    height: 30px;
+    margin-top: 15px;
+}
+
+#lupa {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+    font-family: 'navigation';
+    
+}
+
+.headerInput {
+    height: 100%;
+    background-color: rgb(255, 241, 89);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.headerList {
+    height: 100%;
+}
+
+#query {
+    border-radius: 2px;
+    width: calc(100% - 35px);
+    border: none;
+    height: 25px;
+    margin-left: 7px;
+    font-size: 14px;
+    font-family: "Proxima Nova", Arial, sans-serif;
+
+}
+
+.botonSubmit {
+    background-color: white;
+    height: 27px;
+    border: none;
+    border-radius: 2px
+}
+
+.formulario {
+    background-color: white;
+    border-radius: 2px;
+    text-align: center;
+    display: flex;
+}
+
+
+
+.botones {
+    background-color: rgb(255, 241, 89);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-family: "Proxima Nova";
+    margin-left: 20px;
+}
+
+.seleccionado {
+    border-bottom:3px solid #3a86f7;
+}
+
+.lista-botones {
+    list-style: none;
+    display: flex;
+    background-color: rgb(255, 241, 89);
+    margin-top: -20px;
+}
+.botones-hl {
+    text-align: center;
+}
+
+.li-boton {
+    margin-left: 25px;
+}
