@@ -153,19 +153,33 @@ img.itemImg {
     float: right;
     text-align: left;
     color: #518be2;
-    font-size: 11px;
+    font-size: 14px;
     display: none;
+    background-color: #fff;
+    font-family: 'Proxima Nova';
 
 }
-/* 
-.itemDescRow {
-    display: flex;
+
+.more-offers-button{
+    text-align: center;
+    justify-content: center;
 }
 
-.itemDesc {
-    font-size: 11px;
-    color:#666;
-    font-weight: 300;
-    width: 100%;
-    margin: 0;
-} */
+.ui-button{
+    font-weight: 400;
+    background: #3483fa;
+    border: 0;
+    border-radius: 4px;
+    line-height: 1;
+    color: #fff;
+    width: 180px;
+    padding: 7px 16px;
+    cursor: pointer;
+    font-family: "Proxima Nova";
+    font-size: 14px;
+}
+
+.ui-button:hover{
+    background-color: rgba(52,131,250,.8);
+    color: #fff;
+}

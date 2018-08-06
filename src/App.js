@@ -6,7 +6,8 @@ import Footer from './browser/components/Footer'
 import SingleProduct from './browser/containers/SingleProduct'
 import FavContainer from './browser/containers/FavContainer';
 import Axios from './axiosdef';
-import { ClipLoader } from 'react-spinners'
+import { ClipLoader } from 'react-spinners';
+import CardBanner from './browser/components/CardBanner';
 
 class App extends Component {
   constructor(props) {
@@ -40,31 +41,32 @@ class App extends Component {
       })
       .catch(err => console.log(err))
 
+    var token = localStorage.getItem('access-token');
 
-    var token = localStorage.getItem('access-token')
-
-    Axios.get('/back/products')
-      .then(data => this.setState({ products: data.data.results }))
-      .then(() => {
-        if (this.state.access !== 'unauthorized') {
-          Axios.get(`/back/products/${token}`)
-            .then(data => {
-              var arr = data.data
-              var obj = {}
-              for (var i = 0; i < arr.length; i++) {
-                obj[arr[i].item_id] = arr[i].bookmarked_date;
-              }
-              return obj;
-            })
-            .then(obj => (
-              this.setState({
-                bookmark: obj
-              })
-            ))
-            .catch(err => console.log(err))
-        }
-      })
-  }
+    Axios.get('/back/products/card/deals')
+        .then(data => this.setState({
+          products: data.data
+        }))
+        .then(() => {
+          if(this.state.access !== 'unauthorized'){
+            Axios.get(`/back/products/${token}`)
+                .then(data => {
+                    var arr = data.data
+                    var obj = {}
+                    for(var i = 0; i < arr.length; i++){
+                        obj[arr[i].item_id] = arr[i].bookmarked_date;
+                    }
+                    return obj;
+                })
+                .then(obj => (
+                    this.setState({
+                        bookmark: obj
+                    })
+                ))
+                .catch(err => console.log(err))
+            }
+        })
+      }
 
   bookmarkState(id) {
 
@@ -141,6 +143,7 @@ class App extends Component {
         {this.state.products.length === 0 ? <div className="preCargar"><ClipLoader color={"#fff159"} loading={true} /></div> : <div>{this.state.valor === 'home' ? <div className={"cardsContainer"}>
           <CardDealsContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} access={this.state.access} />
           <SingleProduct handleClick={this.handleClick} bookmark={this.state.bookmark} />
+          <CardBanner />
         </div> : <FavContainer bookmarkState={this.bookmarkState} bookmark={this.state.bookmark} products={this.state.products} valor={this.state.valor} handleValor={this.handleValor} token={this.state.token} />}<Footer /></div>}
       </div>
     );
