@@ -78,9 +78,9 @@ router.get('/products/card/deals', (req, res) => {
         })
 })
 router.get('/singleproducts', (req, res) => {
-    Promise.all([axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1144&limit=1&price=549-650
-    `), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1403&q=cerveza&limit=1`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1246&limit=1&price=549-650`
-    )])
+    Promise.all([axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1000&limit=1&discount=30-100
+    `), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1403&q=packcerveza&limit=1`)
+    ])
         .then(result => {
             var resultado = [];
             result.forEach(element => {
