@@ -20,20 +20,13 @@ export default class SingleProduct extends React.Component {
             .then(result => {
                 return result.data
             })
-            // .then(result => console.log('anda', result))
             .then(result => {
-                result.forEach((element, index) => {
-
-                    return Axios.get(`/back/product/${element.id}`).then(result => {
-
-                        this.setState(({ cards }) => ({
-                            cards: [...cards, result.data],
-                        })
-                        )
-                    })
-
+                return Promise.all(result.map(element => Axios.get(`/back/product/${element.id}`)))
+            })
+            .then(array => {
+                this.setState({
+                    cards: array.map(element => element.data)
                 })
-
             })
 
     }

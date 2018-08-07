@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 const passport = require('passport')
 var MercadoLibreStrategy = require('passport-mercadolibre').Strategy;
-const Config = require('../config.js')
+const Config = require('../src/config.js')
 
 module.exports = router;
 
@@ -99,6 +99,7 @@ router.get('/products/card/deals', (req, res) => {
             })
     }
 })
+
 router.get('/singleproducts', (req, res) => {
     if (singleCatch.length > 0) {
         var segCatch = (singleCatch[0].fecha.getHours() * Math.pow(60,2)) + (singleCatch[0].fecha.getMinutes() * 60) + (singleCatch[0].fecha.getSeconds())
@@ -111,7 +112,7 @@ router.get('/singleproducts', (req, res) => {
         res.json(singleCatch)
     }
     else {
-        Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1SingleCard}&limit=1&price=${Config.priceRangeSingleCards}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2SingleCard}&q=cerveza&limit=1`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3SingleCard}&limit=1&price=${Config.priceRangeSingleCards}`)])
+        Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1SingleCard}&limit=1&discount=${Config.discountSingleCard1}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2SingleCard}&q=${Config.qSingleCard2}&limit=1`)])
             .then(result => {
                 var resultado = [];
                 singleCatch = []
@@ -129,7 +130,6 @@ router.get('/singleproducts', (req, res) => {
                 console.log(e);
             })
     }
-
 })
 
 router.get('/product/:id', (req, res) => {

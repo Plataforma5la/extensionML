@@ -1,12 +1,13 @@
 import React from 'react';
 import './header.css';
+import Config from '../../config.js'
 
 class HeaderInput extends React.Component {
     render() {
         return (
             <div className={"nav-header"}>
                 <div className={"nav-header-logo"}>
-                    <a className={"nav-logo"} href={"https://www.mercadolibre.com.ar/"} target="_blank">Mercado Libre, donde comprar y vender
+                    <a className={"nav-logo"} href={Config.urlRedirect} target="_blank">Mercado Libre, donde comprar y vender
                 </a>
                 </div>
                 <div className={"nav-bounds"}>
