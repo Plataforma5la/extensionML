@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 const passport = require('passport')
 var MercadoLibreStrategy = require('passport-mercadolibre').Strategy;
-const Config = require('../config.js')
+const Config = require('../src/config.js')
 
 module.exports = router;
 
