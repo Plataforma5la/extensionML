@@ -1,9 +1,8 @@
-import Imagen from './browser/imagenes/imagen3.jpg';
 
-export default  {
+const config = {
     clientId: '6429131972786101', //client ID app Argentina para estrategia passport/routes.js
     clientSecret: 'iFuKIyLLhpbg99KyrsPCUqVSleiHYhcf', //client secret app Argentina para estrategia passport/routes.js
-    urlRedirect: 'http://www.mercadolibre.com.ar', //URL redirect para el callback de Oauth Passport/routes.js
+    urlRedirect: 'http://www.mercadolibre.com.ar', //URL redirect para el callback de Oauth Passport y url para link del header/routes.js y HeaderInput.js
     site: 'MLA', //site para rutas backend/routes.js
     cat1CardDeals: 'MLA1051', //Categoría celulares y telefonía para primer producto CardDeals./routes.js
     cat2CardDeals: 'MLA3502', //Categoría accesorios para celulares para segundo producto CardDeals./routes.js
@@ -15,7 +14,6 @@ export default  {
     priceRangeSingleCards: '549-650', //Rango de precios para los productos de Single Card/routes.js
     //---------------------------------------------------------------------------------------------------------------------
     bannerUrl: 'https://ofertas.mercadolibre.com.ar/especial-juguetes#DEAL_ID=mla813&S=homedesktop&V=3&L=especialjuguetes&c_id=/home/exhibitors-carousel/element&c_campaign=especial-juguetes&c_element_order=3', //url link del componente banner/ cardBanner.js
-    bannerImg: Imagen, //imágen del componente banner/cardBanner.js
     //---------------------------------------------------------------------------------------------------------------------
     linkOfertasSemana: 'https://ofertas.mercadolibre.com.ar/ofertas-de-la-semana', //url botón "Ver todas las ofertas" en cardDeals y "Ofertas de la Semana" de Footer/cardDeals.js y Footer.js
     //---------------------------------------------------------------------------------------------------------------------
@@ -31,3 +29,5 @@ export default  {
     copyright: 'Copyright © 1999-2018 MercadoLibre S.R.L.' //copyright para footer/Footer.js
     
 }
+
+module.exports = config
