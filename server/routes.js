@@ -84,6 +84,7 @@ router.get('/products/card/deals', (req, res) => {
         Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`)])
             .then(result => {
                 var resultado = [];
+                arrCatch = []
                 result.forEach((element, index) => {
                     resultado.push(element.data.results[0])
                     resultado[index].fecha = new Date()
@@ -113,13 +114,14 @@ router.get('/singleproducts', (req, res) => {
         Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1SingleCard}&limit=1&price=${Config.priceRangeSingleCards}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2SingleCard}&q=cerveza&limit=1`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3SingleCard}&limit=1&price=${Config.priceRangeSingleCards}`)])
             .then(result => {
                 var resultado = [];
+                singleCatch = []
                 result.forEach((element, index) => {
                     resultado.push(element.data.results[0])
                     resultado[index].fecha = new Date()
                     singleCatch.push(element.data.results[0])
                     singleCatch[index].fecha = new Date()
                 });
-                console.log('axios')
+                console.log('axios', resultado)
                 return resultado
             })
             .then(resultado => res.json(resultado))
