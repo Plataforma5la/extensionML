@@ -64,7 +64,7 @@ router.get('/auth/ml/access', (req, res) => {
 })
 
 router.get('/products/card/deals', (req, res) => {
-    Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`)])
+    Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1CardDeals}&limit=1&${Config.priceRangeCardDeals}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`)])
         .then(result => {
             var resultado = [];
             result.forEach(element => {
@@ -77,10 +77,9 @@ router.get('/products/card/deals', (req, res) => {
             console.log(e);
         })
 })
+
 router.get('/singleproducts', (req, res) => {
-    Promise.all([axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1000&limit=1&discount=30-100
-    `), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1403&q=packcerveza&limit=1`)
-    ])
+    Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1SingleCard}&limit=1&discount=${Config.discountSingleCard1}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2SingleCard}&q=${Config.qSingleCard2}&limit=1`)])
         .then(result => {
             var resultado = [];
             result.forEach(element => {
@@ -89,8 +88,8 @@ router.get('/singleproducts', (req, res) => {
             return resultado
         })
         .then(resultado => res.json(resultado))
-        .catch(e => {
-            console.log(e);
+        .catch(err => {
+            console.log(err);
         })
 
 })

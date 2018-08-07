@@ -8,10 +8,10 @@ const config = {
     cat2CardDeals: 'MLA3502', //Categoría accesorios para celulares para segundo producto CardDeals./routes.js
     cat3CardDeals: 'MLA1574', //Categoría Hogar, Muebles y Jardín para tercer producto CardDeals./routes.js
     priceRangeCardDeals: '549-650', //Rango de precios para los productos de CardDeals/routes.js
-    cat1SingleCard: 'MLA1246', //Categoría Belleza y Cuidado Personal para primer producto Single Card./routes.js
+    cat1SingleCard: 'MLA1000', //Categoría Electrónica, Audio y Video para primer producto Single Card./routes.js
     cat2SingleCard: 'MLA1403', //Categoría Alimentos y Bebidas para segundo producto Single Card./routes.js
-    cat3SingleCard: 'MLA1144', //Categoría Consolas y Videojuegos para tercer producto Single Card./routes.js
-    priceRangeSingleCards: '549-650', //Rango de precios para los productos de Single Card/routes.js
+    qSingleCard2: 'packcerveza', //query para traer pack de cerveza de Alimentos y Bebidas Single Card./routes.js
+    discountSingleCard1: '30-100',//query para traer productos con un rango de descuentos de Electrónica, Audio y Video Single Card./routes.js
     //---------------------------------------------------------------------------------------------------------------------
     bannerUrl: 'https://ofertas.mercadolibre.com.ar/especial-juguetes#DEAL_ID=mla813&S=homedesktop&V=3&L=especialjuguetes&c_id=/home/exhibitors-carousel/element&c_campaign=especial-juguetes&c_element_order=3', //url link del componente banner/ cardBanner.js
     //---------------------------------------------------------------------------------------------------------------------
@@ -27,7 +27,7 @@ const config = {
     urlAyuda: 'https://www.mercadolibre.com.ar/ayuda', //url ayuda para footer/Footer.js
     urlVender: 'https://vender.mercadolibre.com.ar',//url vender para footer/Footer.js
     copyright: 'Copyright © 1999-2018 MercadoLibre S.R.L.' //copyright para footer/Footer.js
-    
+
 }
 
 module.exports = config
