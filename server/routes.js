@@ -64,7 +64,7 @@ router.get('/auth/ml/access', (req, res) => {
 })
 
 router.get('/products/card/deals', (req, res) => {
-    Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1CardDeals}&limit=1&price=${Config.priceRange}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2CardDeals}&limit=1&price=${Config.priceRange}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3CardDeals}&limit=1&price=${Config.priceRange}`)])
+    Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`)])
         .then(result => {
             var resultado = [];
             result.forEach(element => {
@@ -78,8 +78,7 @@ router.get('/products/card/deals', (req, res) => {
         })
 })
 router.get('/singleproducts', (req, res) => {
-    Promise.all([axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1246&limit=1&price=549-650`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1403&q=cerveza&limit=1`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1144&limit=1&price=549-650
-    `)])
+    Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1SingleCard}&limit=1&price=${Config.priceRangeSingleCards}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2SingleCard}&q=cerveza&limit=1`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3SingleCard}&limit=1&price=${Config.priceRangeSingleCards}`)])
         .then(result => {
             var resultado = [];
             result.forEach(element => {
