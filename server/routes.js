@@ -3,6 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 const passport = require('passport')
 var MercadoLibreStrategy = require('passport-mercadolibre').Strategy;
+const Config = require('../config.js')
 
 module.exports = router;
 
@@ -35,8 +36,8 @@ const allowCrossDomain = (req, res, next) => {
 router.use(allowCrossDomain);
 
 passport.use(new MercadoLibreStrategy({
-    clientID: '6429131972786101',
-    clientSecret: 'iFuKIyLLhpbg99KyrsPCUqVSleiHYhcf',
+    clientID: Config.clientId,
+    clientSecret: Config.clientSecret,
     callbackURL: 'http://localhost:3001/back/auth/mercadolibre/callback',
   },
   function (accessToken, refreshToken, profile, done) {
@@ -50,7 +51,7 @@ router.get('/auth/mercadolibre', passport.authorize('mercadolibre'));
 
 router.get('/auth/mercadolibre/callback', passport.authorize('mercadolibre'), function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('http://www.mercadolibre.com.ar');
+    res.redirect(Config.urlRedirect);
 });
 
 router.get('/auth/ml/access', (req, res) => {
@@ -63,7 +64,7 @@ router.get('/auth/ml/access', (req, res) => {
 })
 
 router.get('/products/card/deals', (req, res) => {
-    Promise.all([axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1051&limit=1&price=549-650`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA3502&limit=1&price=549-650`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1574&limit=1&price=549-650`)])
+    Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1CardDeals}&limit=1&price=${Config.priceRange}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2CardDeals}&limit=1&price=${Config.priceRange}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3CardDeals}&limit=1&price=${Config.priceRange}`)])
         .then(result => {
             var resultado = [];
             result.forEach(element => {
