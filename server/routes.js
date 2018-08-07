@@ -77,23 +77,21 @@ router.get('/products/card/deals', (req, res) => {
             console.log(e);
         })
 })
-router.get('/singleproducts', (req, res) => {
-    Promise.all([axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1144&limit=1&price=549-650
-    `), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1403&q=cerveza&limit=1`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1246&limit=1&price=549-650`
-    )])
-        .then(result => {
-            var resultado = [];
-            result.forEach(element => {
-                resultado.push(element.data.results[0])
-            });
-            return resultado
-        })
-        .then(resultado => res.json(resultado))
-        .catch(err => {
-            console.log(err);
-        })
+// router.get('/singleproducts', (req, res) => {
+//     Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1SingleCard}&limit=1&price=${Config.priceRangeSingleCards}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2SingleCard}&q=cerveza&limit=1`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3SingleCard}&limit=1&price=${Config.priceRangeSingleCards}`)])
+//         .then(result => {
+//             var resultado = [];
+//             result.forEach(element => {
+//                 resultado.push(element.data.results[0])
+//             });
+//             return resultado
+//         })
+//         .then(resultado => res.json(resultado))
+//         .catch(err => {
+//             console.log(err);
+//         })
 
-})
+// })
 
 router.get('/product/:id', (req, res) => {
     axios.get(`https://api.mercadolibre.com/items/${req.params.id}`)
