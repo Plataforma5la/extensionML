@@ -1,5 +1,6 @@
 import React from 'react';
 import './cardDeals.css';
+import Config from '../../config.js'
 
 
 
@@ -75,7 +76,7 @@ export default props => {
                 {(valor !== 'carrito')
                 ?<div>
                     <div className={"more-offers-button"}>
-                        <a href={'https://ofertas.mercadolibre.com.ar/ofertas-de-la-semana'} target={"_blank"}><button className={"ui-button"}>Ver todas las ofertas</button></a>
+                        <a href={Config.linkOfertasSemana} target={"_blank"}><button className={"ui-button"}>Ver todas las ofertas</button></a>
                     </div>
                 </div>
                 :null}
