@@ -89,8 +89,8 @@ router.get('/singleproducts', (req, res) => {
             return resultado
         })
         .then(resultado => res.json(resultado))
-        .catch(e => {
-            console.log(e);
+        .catch(err => {
+            console.log(err);
         })
 
 })
