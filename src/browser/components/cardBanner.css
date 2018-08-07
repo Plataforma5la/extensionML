@@ -1,22 +1,11 @@
 
 .CardBanner {
-    border-top: 10px solid #cccccc;
-    
-    
-    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0.5px;
 }
  #imgB {
     height: auto; 
     width: auto; 
-    max-height: 100%;
-    max-width: 100%;   
+     max-width: 100%;
+     box-shadow: 0 1px 6px rgb(0, 0, 0, .3);   
 } 
-/* a:link{text-decoration:none}
-a:visit{text-decoration:none}
-
-#linkTextB{
-    color: #999;
-    font-size: 16px;
-    font-family: 'Proxima Nova';
-    margin-left: 111px;
-} */

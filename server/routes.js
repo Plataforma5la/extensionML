@@ -63,9 +63,19 @@ router.get('/auth/ml/access', (req, res) => {
 
 })
 
-router.get('/products/card/:category', (req, res) => {
-    axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=${req.params.category}&limit=1&price=549-650`)
-        .then(data => res.json(data.data))
+router.get('/products/card/deals', (req, res) => {
+    Promise.all([axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1051&limit=1&price=549-650`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA3502&limit=1&price=549-650`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1574&limit=1&price=549-650`)])
+        .then(result => {
+            var resultado = [];
+            result.forEach(element => {
+                resultado.push(element.data.results[0])
+            });
+            return resultado
+        })
+        .then(resultado => res.json(resultado))
+        .catch(e => {
+            console.log(e);
+        })
 })
 router.get('/singleproducts', (req, res) => {
     Promise.all([axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1246&limit=1&price=549-650`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1403&q=cerveza&limit=1`), axios.get(`https://api.mercadolibre.com/sites/MLA/search?category=MLA1144&limit=1&price=549-650
@@ -87,6 +97,7 @@ router.get('/singleproducts', (req, res) => {
 router.get('/product/:id', (req, res) => {
     axios.get(`https://api.mercadolibre.com/items/${req.params.id}`)
         .then(data => res.json(data.data))
+        .catch(err => console.log(err.message))
 })
 
 router.get('/products/:token', (req, res) => {
@@ -102,9 +113,11 @@ router.post('/bookmarks/:id/:token', (req, res) => {
         data: JSON.stringify({ "item_id": req.params.id })
     })
         .then(data => res.json(data.data))
+        .catch(err => console.log(err.message))
 })
 
 router.delete('/bookmarks/:id/:token', (req, res) => {
     axios.delete(`https://api.mercadolibre.com/users/me/bookmarks/${req.params.id}?access_token=${req.params.token}`)
         .then(data => res.json(data.data))
+        .catch(err => console.log(err.message))
 })
