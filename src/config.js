@@ -3,7 +3,10 @@ const config = {
     //Autenticación//
     clientId: '6429131972786101', //client ID app Argentina para estrategia passport/routes.js
     clientSecret: 'iFuKIyLLhpbg99KyrsPCUqVSleiHYhcf', //client secret app Argentina para estrategia passport/routes.js
-    urlRedirect: 'http://www.mercadolibre.com.ar', //URL redirect para el callback de Oauth Passport y url para link del header/routes.js y HeaderInput.js
+    urlRedirect: 'http://www.mercadolibre.com.ar', //URL redirect para el callback de Oauth Passport y url para link del header/routes.js , HeaderInput.js y HeaderContainer.js
+
+    //Header
+    search: 'http://listado.mercadolibre.com.ar/', //URL redirección search input / HeaderContainer.js
 
     //Rutas Products//
     site: 'MLA', //site para rutas backend/routes.js
