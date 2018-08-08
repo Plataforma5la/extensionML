@@ -164,4 +164,5 @@
 .nav-icon-search:before {
     font-family: "navigation";
     content: '\EA2A';
+    cursor: pointer;
 }

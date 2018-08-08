@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderInput from '../components/HeaderInput';
+import Config from '../../config.js'
 
 class HeaderContainer extends React.Component {
     constructor(props) {
@@ -23,11 +24,11 @@ class HeaderContainer extends React.Component {
 
     handleSubmit(e) {
         if (!this.state.value) {
-            window.open("http://mercadolibre.com.ar")
+            window.open(Config.urlRedirect)
             e.preventDefault();
         }
         else {
-            window.open("http://listado.mercadolibre.com.ar/" + this.state.value);
+            window.open(Config.search + this.state.value);
             e.preventDefault()
             this.setState({
                 value: ''
