@@ -6,7 +6,7 @@
     "axios": "^0.18.0",
     "express": "^4.16.3",
     "passport": "^0.4.0",
-    "passport-mercadolibre": "0.0.2",
+    "passport-mercadolibre": "https://github.com/manuel-grondona/passport-mercadolibre",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router": "^4.3.1",

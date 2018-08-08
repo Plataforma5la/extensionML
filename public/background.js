@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(function (object) {
-    chrome.tabs.create({url: "http://mercadolibre.com.ar/"}, function (tab) {
-        console.log("New tab launched with http://mercadolibre.com.ar/");
+    chrome.tabs.create({url: "http://mercadolibre.com.mx/"}, function (tab) {
+        console.log("New tab launched with http://mercadolibre.com.mx/");
     });
 });
 
