@@ -79,7 +79,7 @@ router.get('/products/card/deals', (req, res) => {
 })
 
 router.get('/singleproducts', (req, res) => {
-    Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1SingleCard}&limit=1&price=${Config.priceRangeSingleCards}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2SingleCard}&q=cerveza&limit=1`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3SingleCard}&limit=1&price=${Config.priceRangeSingleCards}`)])
+    Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1SingleCard}&limit=1&discount=${Config.discountSingleCard1}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2SingleCard}&q=${Config.qSingleCard2}&limit=1`)])
         .then(result => {
             var resultado = [];
             result.forEach(element => {
