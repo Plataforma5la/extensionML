@@ -44,29 +44,29 @@ class App extends Component {
     var token = localStorage.getItem('access-token');
 
     Axios.get('/back/products/card/deals')
-        .then(data => this.setState({
-          products: data.data
-        }))
-        .then(() => {
-          if(this.state.access !== 'unauthorized'){
-            Axios.get(`/back/products/${token}`)
-                .then(data => {
-                    var arr = data.data
-                    var obj = {}
-                    for(var i = 0; i < arr.length; i++){
-                        obj[arr[i].item_id] = arr[i].bookmarked_date;
-                    }
-                    return obj;
-                })
-                .then(obj => (
-                    this.setState({
-                        bookmark: obj
-                    })
-                ))
-                .catch(err => console.log(err))
-            }
-        })
-      }
+      .then(data => this.setState({
+        products: data.data
+      }))
+      .then(() => {
+        if (this.state.access !== 'unauthorized') {
+          Axios.get(`/back/products/${token}`)
+            .then(data => {
+              var arr = data.data
+              var obj = {}
+              for (var i = 0; i < arr.length; i++) {
+                obj[arr[i].item_id] = arr[i].bookmarked_date;
+              }
+              return obj;
+            })
+            .then(obj => (
+              this.setState({
+                bookmark: obj
+              })
+            ))
+            .catch(err => console.log(err))
+        }
+      })
+  }
 
   bookmarkState(id) {
 
@@ -142,7 +142,7 @@ class App extends Component {
         </div>
         {this.state.products.length === 0 ? <div className="preCargar"><ClipLoader color={"#fff159"} loading={true} /></div> : <div>{this.state.valor === 'home' ? <div className={"cardsContainer"}>
           <CardDealsContainer handleClick={this.handleClick} bookmark={this.state.bookmark} products={this.state.products} access={this.state.access} />
-          <SingleProduct handleClick={this.handleClick} bookmark={this.state.bookmark} />
+          <SingleProduct handleClick={this.handleClick} bookmark={this.state.bookmark} access={this.state.access} />
           <CardBanner />
         </div> : <FavContainer bookmarkState={this.bookmarkState} bookmark={this.state.bookmark} products={this.state.products} valor={this.state.valor} handleValor={this.handleValor} token={this.state.token} />}<Footer /></div>}
       </div>

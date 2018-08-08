@@ -36,6 +36,7 @@ export default class SingleProduct extends React.Component {
         return (
             <div>
                 <CardProduct handleClick={this.props.handleClick} bookmark={this.props.bookmark} cards={this.state.cards}
+                    access={this.props.access}
 
                 />
             </div>
