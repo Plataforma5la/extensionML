@@ -36,7 +36,7 @@
     border-top: solid 1px #eee;
     margin-top: 20px;
     margin-bottom: 10px;
-    padding-top: 13px;
+    padding: 22px 7%;
 }
 
 .copy{
@@ -44,7 +44,6 @@
     color: #999;
     font-weight: 300;
     vertical-align: top;
-    margin-left: 22px;
 }
 
 
