@@ -81,7 +81,7 @@ router.get('/products/card/deals', (req, res) => {
         res.json(arrCatch)
     }
     else {
-        Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3CardDeals}&limit=1&price=${Config.priceRangeCardDeals}`)])
+        Promise.all([axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat1CardDeals}&limit=1&price=${Config.priceRangeCardDealsCat1}&q=${Config.queryCardDealsCat1}&shipping_cost=${Config.shippingCostCardDealsCat1}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat2CardDeals}&limit=1&price=${Config.priceRangeCardDealsCat2}&q=${Config.queryCardDealsCat2}`), axios.get(`https://api.mercadolibre.com/sites/${Config.site}/search?category=${Config.cat3CardDeals}&limit=1&price=${Config.priceRangeCardDealsCat3}&q=${Config.queryCardDealsCat3}`)])
             .then(result => {
                 var resultado = [];
                 arrCatch = []

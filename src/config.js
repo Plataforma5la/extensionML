@@ -4,11 +4,17 @@ const config = {
     clientSecret: 'iFuKIyLLhpbg99KyrsPCUqVSleiHYhcf', //client secret app Argentina para estrategia passport/routes.js
     urlRedirect: 'http://www.mercadolibre.com.ar', //URL redirect para el callback de Oauth Passport y url para link del header/routes.js y HeaderInput.js
     site: 'MLA', //site para rutas backend/routes.js
-    cat1CardDeals: 'MLA1051', //Categoría celulares y telefonía para primer producto CardDeals./routes.js
+    cat1CardDeals: 'MLA1055', //Categoría celulares y telefonía para primer producto CardDeals./routes.js
     cat2CardDeals: 'MLA3502', //Categoría accesorios para celulares para segundo producto CardDeals./routes.js
     cat3CardDeals: 'MLA1574', //Categoría Hogar, Muebles y Jardín para tercer producto CardDeals./routes.js
-    priceRangeCardDeals: '549-650', //Rango de precios para los productos de CardDeals/routes.js
-    cat1SingleCard: 'MLA1000', //Categoría Electrónica, Audio y Video para primer producto Single Card./routes.js
+    priceRangeCardDealsCat1: '0-5999', //Rango de precios para los productos de CardDeals/routes.js
+    priceRangeCardDealsCat2: '1200-1250', //Rango de precios para los productos de CardDeals/routes.js
+    priceRangeCardDealsCat3: '0-600', //Rango de precios para los productos de CardDeals/routes.js
+    queryCardDealsCat1: 'celular,nuevo,android', //Query para primer categoría CardDeals (poner más palabras separadas por comas)/routes.js
+    queryCardDealsCat2: 'auriculares,bluetooth', //Query para segunda categoría CardDeals (poner más palabras separadas por comas)/routes.js
+    queryCardDealsCat3: 'cocina,sarten', //Query para tercer categoría CardDeals (poner más palabras separadas por comas)/routes.js
+    shippingCostCardDealsCat1: 'free', //Envío gratis para primer categoría de CardDeals/routes.js
+    cat1SingleCard: 'MLA1246', //Categoría Belleza y Cuidado Personal para primer producto Single Card./routes.js
     cat2SingleCard: 'MLA1403', //Categoría Alimentos y Bebidas para segundo producto Single Card./routes.js
     qSingleCard2: 'packcerveza', //query para traer pack de cerveza de Alimentos y Bebidas Single Card./routes.js
     discountSingleCard1: '30-100',//query para traer productos con un rango de descuentos de Electrónica, Audio y Video Single Card./routes.js
