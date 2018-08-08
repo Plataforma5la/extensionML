@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderInput from '../components/HeaderInput';
-import Config from '../../config.js'
+import Config from '../../config.js';
 
 class HeaderContainer extends React.Component {
     constructor(props) {
