@@ -108,7 +108,6 @@ router.get('/singleproducts', (req, res) => {
         resultSingle = segActual - segCatch
     }
     if (resultSingle < 600 && resultSingle > 1) {
-        console.log('singleCatch')
         res.json(singleCatch)
     }
     else {
@@ -122,7 +121,6 @@ router.get('/singleproducts', (req, res) => {
                     singleCatch.push(element.data.results[0])
                     singleCatch[index].fecha = new Date()
                 });
-                console.log('axios', resultado)
                 return resultado
             })
             .then(resultado => res.json(resultado))
