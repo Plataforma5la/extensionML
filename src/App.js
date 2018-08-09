@@ -101,7 +101,7 @@ class App extends Component {
 
   handleClick = id => {
 
-    Axios.get('/back/auth/mercadolibre')
+    // Axios.get('/back/auth/mercadolibre')
 
     var tokenClick = localStorage.getItem('access-token')
 
